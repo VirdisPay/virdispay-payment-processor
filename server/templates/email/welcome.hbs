@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to VirdisPay</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+        .content {
+            margin-bottom: 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .features {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        .next-steps {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+        }
+        .step {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 14px;
+        }
+        .kyc-status {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🌿 VirdisPay</div>
+            <div class="subtitle">Professional Crypto Payments for Cannabis Industry</div>
+        </div>
+
+        <div class="content">
+            <div class="greeting">
+                Welcome to VirdisPay, {{firstName}}!
+            </div>
+
+            <p>Thank you for joining VirdisPay, the leading crypto payment processor designed specifically for the cannabis industry. Your business <strong>{{businessName}}</strong> is now ready to accept secure, compliant cryptocurrency payments.</p>
+
+            <div class="features">
+                <h3 style="margin-top: 0; color: #333;">What you get with VirdisPay:</h3>
+                <div class="feature-item">
+                    <span class="feature-icon">⚡</span>
+                    <span><strong>99.98% Gas Savings</strong> with Smart Payment Routing</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🛡️</span>
+                    <span><strong>Built-in Compliance</strong> for cannabis industry regulations</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🔒</span>
+                    <span><strong>Non-Custodial Security</strong> - you keep your private keys</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🌿</span>
+                    <span><strong>Cannabis-Friendly</strong> - no banking restrictions</span>
+                </div>
+            </div>
+
+            {{#if kycStatus}}
+            <div class="kyc-status">
+                <h4 style="margin-top: 0; color: #856404;">📋 Next Step: Complete KYC Verification</h4>
+                <p>To start processing payments, you'll need to complete our KYC (Know Your Customer) verification process. This ensures compliance with industry regulations and protects your business.</p>
+            </div>
+            {{/if}}
+
+            <div class="next-steps">
+                <h3 style="margin-top: 0; color: #1976d2;">Your Next Steps:</h3>
+                {{#each nextSteps}}
+                <div class="step">{{this}}</div>
+                {{/each}}
+            </div>
+
+            <div style="text-align: center;">
+                <a href="{{dashboardUrl}}" class="cta-button">Access Your Dashboard</a>
+            </div>
+
+            <p><strong>Need Help?</strong> Our support team is here to help you succeed. Contact us at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a> or visit our help center.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>VirdisPay</strong> - Professional Crypto Payments for Cannabis Industry</p>
+            <p>© {{currentYear}} VirdisPay. All rights reserved.</p>
+            <p>
+                <a href="{{siteUrl}}/privacy-policy">Privacy Policy</a> | 
+                <a href="{{siteUrl}}/terms-of-service">Terms of Service</a> | 
+                <a href="{{siteUrl}}/compliance">Compliance</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

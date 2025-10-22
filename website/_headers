@@ -1,0 +1,28 @@
+# CSS files
+/css/*
+  Content-Type: text/css
+  Cache-Control: public, max-age=31536000
+
+# JS files
+/js/*
+  Content-Type: application/javascript
+  Cache-Control: public, max-age=31536000
+
+# Images
+/images/*
+  Content-Type: image/*
+  Cache-Control: public, max-age=31536000
+
+# Assets
+/assets/*
+  Cache-Control: public, max-age=31536000
+
+# HTML files
+/*.html
+  Content-Type: text/html
+  Cache-Control: public, max-age=0
+
+# Root files
+/
+  Content-Type: text/html
+  Cache-Control: public, max-age=0

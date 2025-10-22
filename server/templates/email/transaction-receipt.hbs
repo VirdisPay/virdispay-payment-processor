@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Receipt - VirdisPay</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .receipt-icon {
+            font-size: 48px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .receipt-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin: 0;
+        }
+        .receipt-summary {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .merchant-info {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .details-table td {
+            padding: 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .details-table td:first-child {
+            font-weight: 600;
+            color: #666;
+            width: 40%;
+            background: #f8f9fa;
+        }
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+        .crypto-info {
+            background: #d4edda;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 14px;
+        }
+        .tx-hash {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            word-break: break-all;
+            font-size: 12px;
+        }
+        .print-button {
+            display: inline-block;
+            background: #6c757d;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+        .verify-button {
+            display: inline-block;
+            background: #17a2b8;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🌿 VirdisPay</div>
+            <div class="receipt-icon">🧾</div>
+            <h1 class="receipt-title">Transaction Receipt</h1>
+        </div>
+
+        <div class="content">
+            <p>Thank you for your payment, {{customerName}}! Here's your official receipt for your records.</p>
+
+            <div class="receipt-summary">
+                <div class="amount">${{amount}} {{currency}}</div>
+                <p style="margin: 0; color: #666;">Payment successfully processed</p>
+            </div>
+
+            <div class="merchant-info">
+                <h3 style="margin-top: 0; color: #1976d2;">🏪 Merchant Information</h3>
+                <p style="margin: 0; font-size: 18px; font-weight: 600;">{{merchantName}}</p>
+                {{#if merchantContact}}
+                <p style="margin: 5px 0 0 0; color: #666;">Contact: {{merchantContact}}</p>
+                {{/if}}
+            </div>
+
+            <table class="details-table">
+                <tr>
+                    <td>Transaction ID:</td>
+                    <td><strong>{{transactionId}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td>{{description}}</td>
+                </tr>
+                <tr>
+                    <td>Payment Method:</td>
+                    <td>Cryptocurrency ({{currency}})</td>
+                </tr>
+                <tr>
+                    <td>Network:</td>
+                    <td>{{network}}</td>
+                </tr>
+                <tr>
+                    <td>Gas Fee:</td>
+                    <td>${{gasFee}}</td>
+                </tr>
+                <tr>
+                    <td>Blockchain Hash:</td>
+                    <td class="tx-hash">{{txHash}}</td>
+                </tr>
+                <tr>
+                    <td>Date & Time:</td>
+                    <td>{{timestamp}}</td>
+                </tr>
+            </table>
+
+            <div class="crypto-info">
+                <h3 style="margin-top: 0; color: #155724;">🚀 Crypto Payment Benefits</h3>
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Ultra-Low Fees:</strong> Only ${{gasFee}} transaction fee</li>
+                    <li><strong>Fast Processing:</strong> Confirmed on {{network}} network</li>
+                    <li><strong>Secure:</strong> Blockchain-verified transaction</li>
+                    <li><strong>Global:</strong> Works anywhere in the world</li>
+                    <li><strong>Private:</strong> Your financial data is protected</li>
+                </ul>
+            </div>
+
+            <p><strong>Transaction Verification:</strong> This transaction has been confirmed on the {{network}} blockchain and is permanently recorded. You can verify this transaction using the blockchain hash above.</p>
+
+            <div style="text-align: center; margin: 30px 0;">
+                <button onclick="window.print()" class="print-button">🖨️ Print Receipt</button>
+                <a href="https://polygonscan.com/tx/{{txHash}}" target="_blank" class="verify-button">🔍 Verify on Blockchain</a>
+            </div>
+
+            <p><strong>Questions?</strong> If you have any questions about this transaction, please contact the merchant or our support team at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>VirdisPay</strong> - Professional Crypto Payments for Cannabis Industry</p>
+            <p>© {{currentYear}} VirdisPay. All rights reserved.</p>
+            <p>This receipt is your proof of payment. Please keep it for your records.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

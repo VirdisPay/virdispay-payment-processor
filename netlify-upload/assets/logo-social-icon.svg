@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#logoGradient)" stroke="#ffffff" stroke-width="8"/>
+  
+  <!-- Inner Circle -->
+  <circle cx="256" cy="256" r="200" fill="#ffffff" opacity="0.1"/>
+  
+  <!-- Cannabis Leaf (matching website design) -->
+  <g transform="translate(256, 256) scale(8)">
+    <!-- Main Leaf -->
+    <path d="M16 4C12 4 8 8 8 12C8 16 12 20 16 20C20 20 24 16 24 12C24 8 20 4 16 4Z" fill="url(#logoGradient)"/>
+    
+    <!-- Leaf Veins -->
+    <path d="M16 8L16 16M12 12L20 12M14 14L18 14" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- Payment Symbol -->
+    <circle cx="16" cy="26" r="4" fill="white" opacity="0.9"/>
+    <path d="M14 26L18 26M16 24L16 28" stroke="url(#logoGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Additional Tech Elements -->
+  <g transform="translate(256, 256)">
+    <!-- Circuit Lines -->
+    <path d="M-80,-80 L-60,-80 L-60,-60 L-40,-60" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M80,-80 L60,-80 L60,-60 L40,-60" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M-80,80 L-60,80 L-60,60 L-40,60" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M80,80 L60,80 L60,60 L40,60" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+    
+    <!-- Connection Points -->
+    <circle cx="-60" cy="-80" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="60" cy="-80" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="-60" cy="80" r="3" fill="#ffffff" opacity="0.8"/>
+    <circle cx="60" cy="80" r="3" fill="#ffffff" opacity="0.8"/>
+  </g>
+</svg>

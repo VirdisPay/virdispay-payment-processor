@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirdisPay Checkout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .checkout-container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .checkout-header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .checkout-logo {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .checkout-subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .checkout-content {
+            padding: 32px;
+        }
+
+        .payment-summary {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .summary-item:last-child {
+            margin-bottom: 0;
+            padding-top: 12px;
+            border-top: 1px solid #e9ecef;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .summary-label {
+            color: #666;
+        }
+
+        .summary-value {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .wallet-section {
+            margin-bottom: 24px;
+        }
+
+        .wallet-section h3 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .wallet-button {
+            width: 100%;
+            background: #f7f7f7;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .wallet-button:hover {
+            border-color: #28a745;
+            background: #f8fff9;
+        }
+
+        .wallet-button.connected {
+            border-color: #28a745;
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .wallet-icon {
+            font-size: 24px;
+        }
+
+        .network-section {
+            margin-bottom: 24px;
+        }
+
+        .network-section h3 {
+            margin-bottom: 16px;
+            color: #333;
+        }
+
+        .network-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .network-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .network-option:hover {
+            border-color: #28a745;
+            background: #f8fff9;
+        }
+
+        .network-option.selected {
+            border-color: #28a745;
+            background: #d4edda;
+        }
+
+        .network-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .network-icon {
+            font-size: 24px;
+        }
+
+        .network-details h4 {
+            margin-bottom: 4px;
+            color: #333;
+        }
+
+        .network-details p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .network-fee {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .payment-button {
+            width: 100%;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .payment-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(40, 167, 69, 0.3);
+        }
+
+        .payment-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .security-info {
+            text-align: center;
+            margin-top: 24px;
+            padding: 16px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .security-info .security-icon {
+            margin-right: 8px;
+        }
+
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .transaction-details {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+            display: none;
+        }
+
+        .transaction-details h4 {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .transaction-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .transaction-label {
+            color: #666;
+        }
+
+        .transaction-value {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .copy-button {
+            background: #6c757d;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+
+        .copy-button:hover {
+            background: #5a6268;
+        }
+
+        @media (max-width: 600px) {
+            .checkout-content {
+                padding: 24px;
+            }
+            
+            .payment-summary {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <div class="checkout-header">
+            <div class="checkout-logo">🌿 VirdisPay</div>
+            <div class="checkout-subtitle">Professional Crypto Payments for Cannabis Industry</div>
+        </div>
+
+        <div class="checkout-content">
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+
+            <div class="payment-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Amount:</span>
+                    <span class="summary-value" id="paymentAmount">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Description:</span>
+                    <span class="summary-value" id="paymentDescription">Payment</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Merchant:</span>
+                    <span class="summary-value" id="merchantName">Merchant</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Total:</span>
+                    <span class="summary-value" id="totalAmount">$0.00</span>
+                </div>
+            </div>
+
+            <div class="wallet-section">
+                <h3>Connect Wallet</h3>
+                <button class="wallet-button" id="connectWallet">
+                    <span class="wallet-icon">🦊</span>
+                    <span>Connect MetaMask</span>
+                </button>
+            </div>
+
+            <div class="network-section">
+                <h3>Select Network</h3>
+                <div class="network-options">
+                    <div class="network-option selected" data-network="polygon">
+                        <div class="network-info">
+                            <span class="network-icon">⚡</span>
+                            <div class="network-details">
+                                <h4>Polygon</h4>
+                                <p>Fast & Low Cost</p>
+                            </div>
+                        </div>
+                        <div class="network-fee">~$0.01</div>
+                    </div>
+                    <div class="network-option" data-network="ethereum">
+                        <div class="network-info">
+                            <span class="network-icon">⛓️</span>
+                            <div class="network-details">
+                                <h4>Ethereum</h4>
+                                <p>Most Secure</p>
+                            </div>
+                        </div>
+                        <div class="network-fee">~$5.00</div>
+                    </div>
+                    <div class="network-option" data-network="bsc">
+                        <div class="network-info">
+                            <span class="network-icon">🥞</span>
+                            <div class="network-details">
+                                <h4>BSC</h4>
+                                <p>Binance Smart Chain</p>
+                            </div>
+                        </div>
+                        <div class="network-fee">~$0.50</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="payment-button" id="paymentButton" disabled>
+                <span class="payment-icon">🌿</span>
+                <span>Pay with Crypto</span>
+            </button>
+
+            <div class="security-info">
+                <span class="security-icon">🔒</span>
+                <span>Secure • Non-custodial • Cannabis-friendly</span>
+            </div>
+
+            <div class="transaction-details" id="transactionDetails">
+                <h4>Transaction Details</h4>
+                <div class="transaction-item">
+                    <span class="transaction-label">Transaction Hash:</span>
+                    <span class="transaction-value" id="txHash">-</span>
+                </div>
+                <div class="transaction-item">
+                    <span class="transaction-label">Network:</span>
+                    <span class="transaction-value" id="txNetwork">-</span>
+                </div>
+                <div class="transaction-item">
+                    <span class="transaction-label">Gas Used:</span>
+                    <span class="transaction-value" id="gasUsed">-</span>
+                </div>
+                <div class="transaction-item">
+                    <span class="transaction-label">Block Number:</span>
+                    <span class="transaction-value" id="blockNumber">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class VirdisPayCheckout {
+            constructor() {
+                this.paymentData = null;
+                this.selectedNetwork = 'polygon';
+                this.walletConnected = false;
+                this.isProcessing = false;
+                
+                this.init();
+            }
+
+            init() {
+                this.loadPaymentData();
+                this.bindEvents();
+            }
+
+            loadPaymentData() {
+                // Get payment data from URL parameters or API
+                const urlParams = new URLSearchParams(window.location.search);
+                const transactionId = urlParams.get('id') || window.location.pathname.split('/').pop();
+                
+                if (transactionId) {
+                    this.fetchPaymentData(transactionId);
+                } else {
+                    this.showError('Invalid payment link');
+                }
+            }
+
+            async fetchPaymentData(transactionId) {
+                try {
+                    const response = await fetch(`/api/payments/status/${transactionId}`);
+                    if (!response.ok) {
+                        throw new Error('Payment not found');
+                    }
+                    
+                    const data = await response.json();
+                    this.paymentData = data.transaction;
+                    this.updatePaymentSummary();
+                } catch (error) {
+                    this.showError('Failed to load payment data');
+                }
+            }
+
+            updatePaymentSummary() {
+                if (!this.paymentData) return;
+                
+                document.getElementById('paymentAmount').textContent = `$${this.paymentData.amount} ${this.paymentData.currency}`;
+                document.getElementById('paymentDescription').textContent = this.paymentData.metadata?.description || 'Payment';
+                document.getElementById('merchantName').textContent = this.paymentData.merchantInfo?.businessName || 'Merchant';
+                document.getElementById('totalAmount').textContent = `$${this.paymentData.amount} ${this.paymentData.currency}`;
+            }
+
+            bindEvents() {
+                // Wallet connection
+                document.getElementById('connectWallet').addEventListener('click', () => {
+                    this.connectWallet();
+                });
+
+                // Network selection
+                document.querySelectorAll('.network-option').forEach(option => {
+                    option.addEventListener('click', () => {
+                        this.selectNetwork(option.dataset.network);
+                    });
+                });
+
+                // Payment button
+                document.getElementById('paymentButton').addEventListener('click', () => {
+                    this.processPayment();
+                });
+            }
+
+            async connectWallet() {
+                if (typeof window.ethereum === 'undefined') {
+                    this.showError('MetaMask is not installed. Please install MetaMask to continue.');
+                    return;
+                }
+
+                try {
+                    const accounts = await window.ethereum.request({
+                        method: 'eth_requestAccounts'
+                    });
+
+                    if (accounts.length > 0) {
+                        this.walletConnected = true;
+                        this.updateWalletButton();
+                        this.updatePaymentButton();
+                    }
+                } catch (error) {
+                    this.showError('Failed to connect wallet');
+                }
+            }
+
+            selectNetwork(network) {
+                this.selectedNetwork = network;
+                
+                // Update UI
+                document.querySelectorAll('.network-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                document.querySelector(`[data-network="${network}"]`).classList.add('selected');
+                
+                this.updatePaymentButton();
+            }
+
+            async processPayment() {
+                if (!this.walletConnected || !this.paymentData || this.isProcessing) {
+                    return;
+                }
+
+                this.isProcessing = true;
+                this.updatePaymentButton(true);
+
+                try {
+                    // Get network configuration
+                    const networkConfig = this.getNetworkConfig(this.selectedNetwork);
+                    
+                    // Switch to selected network
+                    await this.switchNetwork(networkConfig.chainId);
+                    
+                    // Get user's address
+                    const accounts = await window.ethereum.request({
+                        method: 'eth_accounts'
+                    });
+                    const userAddress = accounts[0];
+
+                    // Process payment
+                    const result = await this.sendPayment(userAddress, networkConfig);
+                    
+                    this.showSuccess('Payment successful!');
+                    this.showTransactionDetails(result);
+                    
+                } catch (error) {
+                    this.showError(`Payment failed: ${error.message}`);
+                } finally {
+                    this.isProcessing = false;
+                    this.updatePaymentButton(false);
+                }
+            }
+
+            getNetworkConfig(network) {
+                const configs = {
+                    polygon: {
+                        chainId: '0x89',
+                        rpcUrl: 'https://polygon-rpc.com',
+                        name: 'Polygon'
+                    },
+                    ethereum: {
+                        chainId: '0x1',
+                        rpcUrl: 'https://mainnet.infura.io/v3/YOUR_PROJECT_ID',
+                        name: 'Ethereum'
+                    },
+                    bsc: {
+                        chainId: '0x38',
+                        rpcUrl: 'https://bsc-dataseed.binance.org',
+                        name: 'BSC'
+                    }
+                };
+                
+                return configs[network];
+            }
+
+            async switchNetwork(networkConfig) {
+                try {
+                    await window.ethereum.request({
+                        method: 'wallet_switchEthereumChain',
+                        params: [{ chainId: networkConfig.chainId }]
+                    });
+                } catch (error) {
+                    // Network not added, try to add it
+                    if (error.code === 4902) {
+                        await window.ethereum.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [{
+                                chainId: networkConfig.chainId,
+                                chainName: networkConfig.name,
+                                rpcUrls: [networkConfig.rpcUrl]
+                            }]
+                        });
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+
+            async sendPayment(userAddress, networkConfig) {
+                // This would integrate with your actual payment processing
+                // For now, we'll simulate a successful payment
+                
+                const mockResult = {
+                    txHash: '0x' + Math.random().toString(16).substr(2, 64),
+                    network: networkConfig.name,
+                    gasUsed: '21000',
+                    blockNumber: Math.floor(Math.random() * 1000000) + 1000000
+                };
+
+                // In a real implementation, you would:
+                // 1. Send transaction to smart contract
+                // 2. Wait for confirmation
+                // 3. Update payment status via API
+                
+                return mockResult;
+            }
+
+            updateWalletButton() {
+                const button = document.getElementById('connectWallet');
+                if (this.walletConnected) {
+                    button.classList.add('connected');
+                    button.innerHTML = '<span class="wallet-icon">✅</span><span>Wallet Connected</span>';
+                } else {
+                    button.classList.remove('connected');
+                    button.innerHTML = '<span class="wallet-icon">🦊</span><span>Connect MetaMask</span>';
+                }
+            }
+
+            updatePaymentButton(processing = false) {
+                const button = document.getElementById('paymentButton');
+                
+                if (processing) {
+                    button.disabled = true;
+                    button.innerHTML = '<span class="loading-spinner"></span><span>Processing...</span>';
+                } else if (this.walletConnected) {
+                    button.disabled = false;
+                    button.innerHTML = '<span class="payment-icon">🌿</span><span>Pay with Crypto</span>';
+                } else {
+                    button.disabled = true;
+                    button.innerHTML = '<span class="payment-icon">🌿</span><span>Connect Wallet First</span>';
+                }
+            }
+
+            showError(message) {
+                const errorEl = document.getElementById('errorMessage');
+                errorEl.textContent = message;
+                errorEl.style.display = 'block';
+                
+                setTimeout(() => {
+                    errorEl.style.display = 'none';
+                }, 5000);
+            }
+
+            showSuccess(message) {
+                const successEl = document.getElementById('successMessage');
+                successEl.textContent = message;
+                successEl.style.display = 'block';
+                
+                setTimeout(() => {
+                    successEl.style.display = 'none';
+                }, 5000);
+            }
+
+            showTransactionDetails(result) {
+                document.getElementById('txHash').textContent = result.txHash;
+                document.getElementById('txNetwork').textContent = result.network;
+                document.getElementById('gasUsed').textContent = result.gasUsed;
+                document.getElementById('blockNumber').textContent = result.blockNumber;
+                
+                document.getElementById('transactionDetails').style.display = 'block';
+            }
+        }
+
+        // Initialize checkout when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new VirdisPayCheckout();
+        });
+    </script>
+</body>
+</html>
+
+
+

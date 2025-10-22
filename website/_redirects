@@ -1,0 +1,14 @@
+# CSS files
+/css/* /css/:splat 200
+
+# JS files  
+/js/* /js/:splat 200
+
+# Images
+/images/* /images/:splat 200
+
+# Assets
+/assets/* /assets/:splat 200
+
+# Catch all for SPA
+/* /index.html 200

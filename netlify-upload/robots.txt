@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://virdispay.com/sitemap.xml
+
+# Block admin and checkout pages from indexing
+Disallow: /admin.html
+Disallow: /checkout.html
+Disallow: /widgets/
+
+# Allow all blog content
+Allow: /blog/
+
+# Crawl-delay (be nice to servers)
+Crawl-delay: 1
+

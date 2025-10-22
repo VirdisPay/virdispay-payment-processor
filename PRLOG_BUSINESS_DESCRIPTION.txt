@@ -1,0 +1,67 @@
+VirdisPay is a cryptocurrency payment processor for high-risk industries systematically rejected by traditional banks. We serve legal cannabis dispensaries, vape shops, nutraceuticals, adult content, gambling platforms, forex brokers, and crypto services in the UK and US.
+
+THE PROBLEM
+
+Legitimate businesses in high-risk sectors face severe payment processing challenges: cannabis dispensaries denied merchant accounts, vape shops charged excessive fees and facing sudden account freezes, supplement companies blocked due to FDA concerns, and adult content creators banned from PayPal and Stripe. Even in jurisdictions where these businesses operate legally, traditional financial institutions refuse service due to regulatory concerns, reputational risk, and industry bias.
+
+The cost is staggering. High-risk merchants typically pay 10-15% in transaction fees for adult content and CBD businesses, 8-12% for vaping, and 6-10% for cannabis dispensaries. Add rolling reserves that lock up 10-30% of capital for 6-12 months, 3-7 day settlement delays, $25-$100 chargeback fees, and the constant risk of sudden account termination. For cannabis businesses alone, the lack of banking access costs the industry over $1 billion annually in excessive fees and operational inefficiencies.
+
+OUR SOLUTION
+
+VirdisPay enables businesses to accept stablecoin payments (USDC, USDT, DAI) that maintain a stable $1.00 value - eliminating cryptocurrency volatility risk while gaining all the benefits of blockchain technology. Our Smart Payment Routing technology automatically analyzes network conditions in real-time and selects the cheapest blockchain for each transaction, reducing gas fees from $20-$200 (Ethereum) to just $0.01 (Polygon), saving businesses 99.98% on transaction costs.
+
+Unlike traditional payment processors, VirdisPay operates as a non-custodial platform. Payments flow directly from customer wallets to merchant wallets through secure smart contracts. We never hold funds, store private keys, or take custody of payments - eliminating custody risk and reducing regulatory complexity.
+
+KEY FEATURES
+
+Smart Payment Routing: Our proprietary system analyzes blockchain networks in real-time and routes each payment through the most cost-effective network. This reduces gas fees from $20-$200 (Ethereum) to just $0.01 (Polygon), saving businesses 99.98% on transaction costs. Merchants save thousands monthly on gas fees alone.
+
+Stablecoin Payments: Accept USDC, USDT, and DAI - cryptocurrencies backed 1:1 by US dollars that maintain a constant $1.00 value. When customers pay $100 in USDC, merchants receive exactly $100 in value. No volatility, no exchange rate risk, all the benefits of cryptocurrency.
+
+Zero Chargebacks: Cryptocurrency transactions are final and irreversible. Eliminate chargeback fraud entirely, save $25-$100 per chargeback fee, and remove the risk of account termination due to high chargeback ratios. For high-risk businesses, this alone can save thousands monthly.
+
+Instant Settlement: Payments confirmed in 2-3 seconds and funds arrive directly in merchant wallets immediately. No 3-5 day holds, no rolling reserves locking up 10-30% of revenue for months, no frozen accounts, no payment processor approvals needed.
+
+Global Payments: Accept payments from customers worldwide without currency conversion fees, international transaction fees, or geographic restrictions. One merchant account works globally with the same low 1% fee everywhere.
+
+Multi-Chain Infrastructure: Support for Ethereum, Polygon, Binance Smart Chain, Arbitrum, and Optimism gives merchants and customers flexibility while our Smart Routing ensures the lowest possible fees on every transaction.
+
+Built-in Compliance: Comprehensive KYC/AML system including identity verification, document upload and review, sanctions list screening, PEP (Politically Exposed Persons) checks, transaction monitoring, risk assessment, and automated compliance reporting. Helps merchants meet UK FCA and US FinCEN requirements without expensive third-party services.
+
+TRANSPARENT PRICING
+
+Free Tier: 1.5% transaction fee, up to $10,000 monthly volume - perfect for new businesses testing crypto payments
+
+Starter Plan: $29/month + 1% transaction fee, up to $100,000 monthly volume - ideal for growing businesses  
+
+Professional Plan: $99/month + 1% transaction fee, up to $100,000 monthly volume - for established operations
+
+Enterprise Plan: $299/month + 1% transaction fee, unlimited volume - for high-volume merchants
+
+Compare this to traditional high-risk processors charging 10-15% plus monthly fees, chargeback fees, rolling reserves, and PCI compliance costs. A business processing $50,000 monthly saves $4,500-$6,500 per month by switching to VirdisPay.
+
+INDUSTRIES WE SERVE
+
+Cannabis & Hemp: Licensed dispensaries, medical cannabis, CBD products, hemp cultivation. US coverage includes all 50 states for licensed operations. UK coverage for CBD and hemp products.
+
+Vaping & E-Liquids: Vape shops, e-cigarette retailers, CBD vape products, both online and brick-and-mortar locations.
+
+Nutraceuticals & Wellness: Dietary supplements, herbal products, wellness items, alternative medicine businesses facing FDA-related payment restrictions.
+
+Adult Content: Content creators, subscription platforms, cam sites, dating services - industries systematically banned by traditional processors.
+
+Gaming & Gambling: Online casinos, sports betting platforms, skill gaming, poker rooms requiring instant deposits and withdrawals.
+
+Forex & Trading: Forex brokers, binary options, CFD trading platforms needing global payment acceptance and instant funding.
+
+Crypto Services: Cryptocurrency exchanges, DeFi platforms, NFT marketplaces, Web3 services, blockchain projects.
+
+SECURITY & NON-CUSTODIAL ARCHITECTURE
+
+VirdisPay never holds merchant funds or customer payments. All transactions are direct wallet-to-wallet transfers through audited smart contracts. This non-custodial approach eliminates custody risk, reduces regulatory burden, and ensures merchants maintain complete control of their finances. Our platform implements bank-grade security including two-factor authentication, API key authentication, domain whitelisting, IP controls, fraud detection, and comprehensive audit logging.
+
+INTEGRATION OPTIONS
+
+Multiple integration methods suit any business: drop-in website widgets requiring just a few lines of code, full-featured REST API for custom integrations, pre-built e-commerce plugins for WooCommerce and Shopify, secure hosted checkout pages, and QR code generation for in-store payments. Developer documentation and support included with all plans.
+
+Get started at virdispay.com

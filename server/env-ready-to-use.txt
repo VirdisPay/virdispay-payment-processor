@@ -1,0 +1,41 @@
+# VirdisPay Environment Configuration
+# 
+# INSTRUCTIONS:
+# 1. Rename this file from "env-ready-to-use.txt" to ".env"
+# 2. The file is ready to use with your secure JWT_SECRET already set!
+# 3. Adjust any other settings as needed
+#
+
+# ============================================
+# CRITICAL SECURITY SETTINGS (REQUIRED)
+# ============================================
+
+JWT_SECRET=8eb20bae2f81967f631f182ea0cf1be8e6358baefda49e0dfbde4855b4733a609f8216b41df7ce538a58a0b0b4579f146decfe1644459c9c8eca31aec86a8228
+MONGODB_URI=mongodb://localhost:27017/virdispay-payments
+NODE_ENV=development
+
+# ============================================
+# SERVER CONFIGURATION
+# ============================================
+
+PORT=5000
+CLIENT_URL=http://localhost:3000
+WEBSITE_URL=http://localhost:8080
+
+# ============================================
+# BLOCKCHAIN CONFIGURATION
+# ============================================
+
+POLYGON_RPC_URL=https://polygon-rpc.com
+DEFAULT_BLOCKCHAIN=polygon
+
+# ============================================
+# COMPLIANCE SETTINGS
+# ============================================
+
+AML_THRESHOLD=10000
+KYC_THRESHOLD=5000
+PLATFORM_FEE_PERCENTAGE=250
+
+
+

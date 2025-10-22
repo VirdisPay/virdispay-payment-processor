@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirdisPay Widget Examples</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .example-section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .example-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 10px;
+        }
+
+        .example-section h3 {
+            color: #666;
+            margin: 20px 0 10px 0;
+        }
+
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .demo-area {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .demo-area h4 {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .widget-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .widget-demo {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .widget-demo h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .copy-button {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        .copy-button:hover {
+            background: #218838;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-item p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .integration-steps {
+            counter-reset: step-counter;
+        }
+
+        .integration-step {
+            counter-increment: step-counter;
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            position: relative;
+        }
+
+        .integration-step::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: -15px;
+            top: 20px;
+            background: #28a745;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .integration-step h4 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .integration-step p {
+            color: #666;
+            margin: 0;
+        }
+
+        .theme-selector {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .theme-button {
+            padding: 8px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-button:hover {
+            border-color: #28a745;
+        }
+
+        .theme-button.active {
+            border-color: #28a745;
+            background: #28a745;
+            color: white;
+        }
+
+        .size-selector {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .size-button {
+            padding: 6px 12px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .size-button:hover {
+            border-color: #28a745;
+        }
+
+        .size-button.active {
+            border-color: #28a745;
+            background: #28a745;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌿 VirdisPay Widget Examples</h1>
+        <p>Professional crypto payment integration for your website</p>
+    </div>
+
+    <!-- Basic Integration -->
+    <div class="example-section">
+        <h2>1. Basic Integration</h2>
+        <p>Add VirdisPay to your website with just a few lines of code.</p>
+
+        <h3>HTML Integration</h3>
+        <div class="code-block">
+            <pre><code>&lt;!-- Include VirdisPay Widget --&gt;
+&lt;script src="https://widgets.virdispay.com/virdispay-widget.js"&gt;&lt;/script&gt;
+
+&lt;!-- Add payment button --&gt;
+&lt;button data-virdispay-widget="button"
+        data-merchant-id="your_merchant_id"
+        data-amount="99.99"
+        data-currency="USD"
+        data-description="Premium CBD Oil"
+        data-theme="green"&gt;
+  Pay with Crypto
+&lt;/button&gt;</code></pre>
+        </div>
+
+        <h3>JavaScript Integration</h3>
+        <div class="code-block">
+            <pre><code>&lt;script&gt;
+  // Initialize VirdisPay widget
+  const widget = VirdisPay.init({
+    type: 'button',
+    merchantId: 'your_merchant_id',
+    amount: 99.99,
+    currency: 'USD',
+    description: 'Premium CBD Oil',
+    theme: 'green',
+    onSuccess: function(payment) {
+      console.log('Payment successful:', payment);
+      // Redirect to success page
+      window.location.href = '/success?tx=' + payment.transactionId;
+    },
+    onError: function(error) {
+      console.error('Payment failed:', error);
+      alert('Payment failed. Please try again.');
+    }
+  });
+&lt;/script&gt;</code></pre>
+        </div>
+
+        <div class="demo-area">
+            <h4>Live Demo</h4>
+            <button data-virdispay-widget="button"
+                    data-merchant-id="demo_merchant_123"
+                    data-amount="99.99"
+                    data-currency="USD"
+                    data-description="Premium CBD Oil - Live Demo"
+                    data-theme="green">
+                Pay with Crypto - $99.99
+            </button>
+        </div>
+    </div>
+
+    <!-- Widget Types -->
+    <div class="example-section">
+        <h2>2. Widget Types</h2>
+        <p>Choose from different widget types to match your website design.</p>
+
+        <div class="widget-grid">
+            <div class="widget-demo">
+                <h4>Button Widget</h4>
+                <div data-virdispay-widget="button"
+                     data-merchant-id="demo_merchant_123"
+                     data-amount="49.99"
+                     data-currency="USD"
+                     data-description="CBD Gummies"
+                     data-theme="green"
+                     data-button-text="Buy Now">
+                </div>
+            </div>
+
+            <div class="widget-demo">
+                <h4>Embedded Widget</h4>
+                <div data-virdispay-widget="embedded"
+                     data-merchant-id="demo_merchant_123"
+                     data-amount="149.99"
+                     data-currency="USD"
+                     data-description="Premium CBD Bundle"
+                     data-theme="purple">
+                </div>
+            </div>
+
+            <div class="widget-demo">
+                <h4>Modal Widget</h4>
+                <div data-virdispay-widget="modal"
+                     data-merchant-id="demo_merchant_123"
+                     data-amount="29.99"
+                     data-currency="USD"
+                     data-description="CBD Tincture"
+                     data-theme="dark"
+                     data-button-text="Quick Pay">
+                </div>
+            </div>
+
+            <div class="widget-demo">
+                <h4>Hosted Checkout</h4>
+                <div data-virdispay-widget="hosted"
+                     data-merchant-id="demo_merchant_123"
+                     data-amount="199.99"
+                     data-currency="USD"
+                     data-description="CBD Starter Kit"
+                     data-theme="minimal"
+                     data-button-text="Secure Checkout">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Themes -->
+    <div class="example-section">
+        <h2>3. Customization</h2>
+        <p>Customize the appearance with different themes and sizes.</p>
+
+        <h3>Available Themes</h3>
+        <div class="theme-selector">
+            <button class="theme-button active" data-theme="green">Green</button>
+            <button class="theme-button" data-theme="purple">Purple</button>
+            <button class="theme-button" data-theme="dark">Dark</button>
+            <button class="theme-button" data-theme="minimal">Minimal</button>
+        </div>
+
+        <h3>Button Sizes</h3>
+        <div class="size-selector">
+            <button class="size-button active" data-size="small">Small</button>
+            <button class="size-button" data-size="medium">Medium</button>
+            <button class="size-button" data-size="large">Large</button>
+        </div>
+
+        <div class="demo-area">
+            <h4>Customizable Widget</h4>
+            <div id="customizableWidget"></div>
+        </div>
+    </div>
+
+    <!-- E-commerce Integration -->
+    <div class="example-section">
+        <h2>4. E-commerce Integration</h2>
+        <p>Integrate VirdisPay with popular e-commerce platforms.</p>
+
+        <h3>WooCommerce Integration</h3>
+        <div class="code-block">
+            <pre><code>// Add to your WooCommerce checkout
+add_action('woocommerce_review_order_after_payment', 'add_virdispay_option');
+
+function add_virdispay_option() {
+    $total = WC()->cart->get_total();
+    $currency = get_woocommerce_currency();
+    
+    echo '&lt;div class="virdispay-checkout"&gt;';
+    echo '&lt;script src="https://widgets.virdispay.com/virdispay-widget.js"&gt;&lt;/script&gt;';
+    echo '&lt;div data-virdispay-widget="embedded"
+               data-merchant-id="' . get_option('virdispay_merchant_id') . '"
+               data-amount="' . $total . '"
+               data-currency="' . $currency . '"
+               data-description="Order #' . WC()->session->get('order_id') . '"&gt;&lt;/div&gt;';
+    echo '&lt;/div&gt;';
+}</code></pre>
+        </div>
+
+        <h3>Shopify Integration</h3>
+        <div class="code-block">
+            <pre><code>// Add to your Shopify checkout
+&lt;script src="https://widgets.virdispay.com/virdispay-widget.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkout = Shopify.checkout;
+    
+    VirdisPay.init({
+      type: 'embedded',
+      merchantId: '{{ settings.virdispay_merchant_id }}',
+      amount: checkout.total_price,
+      currency: checkout.currency,
+      description: 'Shopify Order #' + checkout.order_number,
+      onSuccess: function(payment) {
+        // Complete Shopify checkout
+        window.location.href = checkout.order_status_url;
+      }
+    });
+  });
+&lt;/script&gt;</code></pre>
+        </div>
+    </div>
+
+    <!-- API Integration -->
+    <div class="example-section">
+        <h2>5. Advanced API Integration</h2>
+        <p>For custom implementations, use our REST API directly.</p>
+
+        <h3>Create Payment Request</h3>
+        <div class="code-block">
+            <pre><code>// Create payment request
+const response = await fetch('https://api.virdispay.com/api/payments/create', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your_api_key'
+  },
+  body: JSON.stringify({
+    merchantId: 'your_merchant_id',
+    amount: 99.99,
+    currency: 'USD',
+    description: 'Premium CBD Oil',
+    customerEmail: 'customer@example.com',
+    successUrl: 'https://yoursite.com/success',
+    cancelUrl: 'https://yoursite.com/cancel'
+  })
+});
+
+const paymentData = await response.json();
+console.log('Payment created:', paymentData);</code></pre>
+        </div>
+
+        <h3>Check Payment Status</h3>
+        <div class="code-block">
+            <pre><code>// Check payment status
+const statusResponse = await fetch(`https://api.virdispay.com/api/payments/status/${paymentData.transactionId}`, {
+  headers: {
+    'Authorization': 'Bearer your_api_key'
+  }
+});
+
+const statusData = await statusResponse.json();
+console.log('Payment status:', statusData);</code></pre>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="example-section">
+        <h2>6. Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <h4>🌿 Cannabis-Friendly</h4>
+                <p>Designed specifically for hemp and cannabis businesses with no banking restrictions.</p>
+            </div>
+            <div class="feature-item">
+                <h4>⚡ Ultra-Low Fees</h4>
+                <p>Save up to 99.98% compared to Ethereum mainnet with smart routing.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🔒 Non-Custodial</h4>
+                <p>Users keep their private keys. No custody of funds means maximum security.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🌐 Multi-Chain</h4>
+                <p>Support for Polygon, Ethereum, BSC, and more networks.</p>
+            </div>
+            <div class="feature-item">
+                <h4>📱 Mobile Optimized</h4>
+                <p>Responsive design that works perfectly on all devices.</p>
+            </div>
+            <div class="feature-item">
+                <h4>🛡️ Compliance Ready</h4>
+                <p>Built-in KYC/AML features for regulatory compliance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Integration Steps -->
+    <div class="example-section">
+        <h2>7. Quick Start Guide</h2>
+        <div class="integration-steps">
+            <div class="integration-step">
+                <h4>Sign Up</h4>
+                <p>Create your VirdisPay merchant account and get your merchant ID.</p>
+            </div>
+            <div class="integration-step">
+                <h4>Include Widget</h4>
+                <p>Add the VirdisPay widget script to your website.</p>
+            </div>
+            <div class="integration-step">
+                <h4>Add Payment Button</h4>
+                <p>Place payment buttons on your product pages or checkout.</p>
+            </div>
+            <div class="integration-step">
+                <h4>Configure Callbacks</h4>
+                <p>Set up success and error handling for your payment flow.</p>
+            </div>
+            <div class="integration-step">
+                <h4>Test & Launch</h4>
+                <p>Test payments in sandbox mode, then go live!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include VirdisPay Widget -->
+    <script src="virdispay-widget.js"></script>
+
+    <script>
+        // Theme and size customization
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeButtons = document.querySelectorAll('.theme-button');
+            const sizeButtons = document.querySelectorAll('.size-button');
+            const customizableWidget = document.getElementById('customizableWidget');
+            
+            let currentTheme = 'green';
+            let currentSize = 'medium';
+            
+            function updateCustomizableWidget() {
+                customizableWidget.innerHTML = `
+                    <div data-virdispay-widget="button"
+                         data-merchant-id="demo_merchant_123"
+                         data-amount="79.99"
+                         data-currency="USD"
+                         data-description="Customizable Widget"
+                         data-theme="${currentTheme}"
+                         data-button-size="${currentSize}">
+                    </div>
+                `;
+                
+                // Reinitialize widgets
+                if (window.VirdisPay) {
+                    const widgets = customizableWidget.querySelectorAll('[data-virdispay-widget]');
+                    widgets.forEach(element => {
+                        const options = {
+                            type: element.dataset.virdispayWidget,
+                            merchantId: element.dataset.merchantId,
+                            amount: parseFloat(element.dataset.amount),
+                            currency: element.dataset.currency || 'USD',
+                            description: element.dataset.description || '',
+                            theme: element.dataset.theme || 'green',
+                            buttonText: element.dataset.buttonText || 'Pay with Crypto',
+                            buttonSize: element.dataset.buttonSize || 'medium'
+                        };
+                        
+                        new VirdisPay.Widget(options);
+                    });
+                }
+            }
+            
+            themeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    themeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentTheme = this.dataset.theme;
+                    updateCustomizableWidget();
+                });
+            });
+            
+            sizeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    sizeButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSize = this.dataset.size;
+                    updateCustomizableWidget();
+                });
+            });
+            
+            // Initialize customizable widget
+            updateCustomizableWidget();
+        });
+
+        // Copy code functionality
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('copy-button')) {
+                const codeBlock = e.target.previousElementSibling.querySelector('code');
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    e.target.textContent = 'Copied!';
+                    setTimeout(() => {
+                        e.target.textContent = 'Copy';
+                    }, 2000);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+

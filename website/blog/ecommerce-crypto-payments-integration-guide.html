@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete E-commerce Crypto Payments Integration Guide - VirdisPay</title>
+    <meta name="description" content="Learn how to integrate crypto payments into any e-commerce platform. Complete guide for Shopify, WooCommerce, and custom websites with VirdisPay.">
+    <meta name="keywords" content="ecommerce crypto payments, shopify crypto payments, woocommerce crypto, crypto checkout integration, crypto payment gateway">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Complete E-commerce Crypto Payments Integration Guide">
+    <meta property="og:description" content="Add crypto payments to any e-commerce platform in minutes. Works with Shopify, WooCommerce, and custom websites.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://virdispay.com/blog/ecommerce-crypto-payments-integration-guide.html">
+    <meta property="og:image" content="https://virdispay.com/images/blog/ecommerce-integration.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete E-commerce Crypto Payments Integration Guide">
+    <meta name="twitter:description" content="Add crypto payments to any e-commerce platform in minutes. Works with Shopify, WooCommerce, and custom websites.">
+    <meta name="twitter:image" content="https://virdispay.com/images/blog/ecommerce-integration.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="VirdisPay" class="logo">
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#features" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#ecommerce" class="nav-link">E-commerce</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#pricing" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#integration" class="nav-link">Integration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://app.virdispay.com" class="nav-link nav-cta">Get Started</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="blog-breadcrumb">
+                <a href="../index.html">Home</a> / <a href="../blog.html">Blog</a> / E-commerce Integration
+            </div>
+            <h1>Complete E-commerce Crypto Payments Integration Guide</h1>
+            <div class="blog-meta">
+                <span class="blog-date"><i class="fas fa-calendar"></i> January 15, 2025</span>
+                <span class="blog-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+                <span class="blog-category"><i class="fas fa-tag"></i> E-commerce Integration</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <main class="blog-content">
+        <div class="container">
+            <article class="blog-article">
+                <div class="article-intro">
+                    <p class="lead">Transform your e-commerce store with crypto payments in minutes, not weeks. This comprehensive guide shows you how to integrate VirdisPay with Shopify, WooCommerce, and custom websites.</p>
+                </div>
+
+                <div class="article-toc">
+                    <h3>Table of Contents</h3>
+                    <ul>
+                        <li><a href="#why-crypto-payments">Why Add Crypto Payments?</a></li>
+                        <li><a href="#shopify-integration">Shopify Integration</a></li>
+                        <li><a href="#woocommerce-integration">WooCommerce Integration</a></li>
+                        <li><a href="#custom-website">Custom Website Integration</a></li>
+                        <li><a href="#mobile-optimization">Mobile Optimization</a></li>
+                        <li><a href="#best-practices">Best Practices</a></li>
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    </ul>
+                </div>
+
+                <section id="why-crypto-payments">
+                    <h2>Why Add Crypto Payments to Your E-commerce Store?</h2>
+                    
+                    <p>Crypto payments offer several advantages for e-commerce businesses:</p>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">💰</div>
+                            <h3>Lower Fees</h3>
+                            <p>99.98% lower transaction fees compared to traditional payment processors</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🌍</div>
+                            <h3>Global Reach</h3>
+                            <p>Accept payments from customers worldwide without currency restrictions</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">⚡</div>
+                            <h3>Instant Settlement</h3>
+                            <p>Receive payments instantly without waiting for bank processing</p>
+                        </div>
+                        <div class="benefit-card">
+                            <div class="benefit-icon">🔒</div>
+                            <h3>Enhanced Security</h3>
+                            <p>Blockchain-based security with non-custodial architecture</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="shopify-integration">
+                    <h2>Shopify Integration</h2>
+                    
+                    <p>Adding crypto payments to your Shopify store is straightforward with VirdisPay's JavaScript SDK.</p>
+                    
+                    <h3>Step 1: Get Your API Credentials</h3>
+                    <p>First, sign up for a VirdisPay account and get your API key and merchant ID from the dashboard.</p>
+                    
+                    <h3>Step 2: Add the SDK to Your Theme</h3>
+                    <p>Add the VirdisPay SDK to your Shopify theme's layout file:</p>
+                    
+                    <pre><code>&lt;script src="https://cdn.virdispay.com/sdk/VirdisPaySDK.js"&gt;&lt;/script&gt;</code></pre>
+                    
+                    <h3>Step 3: Initialize the Payment Button</h3>
+                    <p>Add this code to your checkout template:</p>
+                    
+                    <pre><code>&lt;script&gt;
+const virdisPay = new VirdisPaySDK({
+  apiKey: 'your-api-key',
+  merchantId: 'your-merchant-id',
+  baseUrl: 'https://api.virdispay.com',
+  widgetUrl: 'https://checkout.virdispay.com'
+});
+
+// Add crypto payment option to checkout
+const cryptoButton = virdisPay.createPaymentButton({
+  text: 'Pay with Crypto',
+  amount: {{ checkout.total_price | money_without_currency }},
+  currency: 'USDC',
+  orderId: '{{ checkout.order_number }}',
+  customerEmail: '{{ checkout.email }}',
+  onPaymentComplete: (paymentId) => {
+    // Redirect to success page
+    window.location.href = '/checkout/success?payment=' + paymentId;
+  },
+  onPaymentError: (error) => {
+    alert('Payment failed: ' + error);
+  }
+});
+
+// Add button to payment methods
+document.getElementById('payment-methods').appendChild(cryptoButton);
+&lt;/script&gt;</code></pre>
+                    
+                    <div class="code-note">
+                        <strong>💡 Pro Tip:</strong> You can also use the widget integration for a more seamless experience:
+                    </div>
+                    
+                    <pre><code>&lt;div data-virdispay
+     data-api-key="your-api-key"
+     data-amount="{{ checkout.total_price | money_without_currency }}"
+     data-currency="USDC"
+     data-order-id="{{ checkout.order_number }}"&gt;
+&lt;/div&gt;</code></pre>
+                </section>
+
+                <section id="woocommerce-integration">
+                    <h2>WooCommerce Integration</h2>
+                    
+                    <p>For WordPress/WooCommerce stores, we provide a complete plugin that handles everything automatically.</p>
+                    
+                    <h3>Step 1: Install the Plugin</h3>
+                    <p>Download and upload the VirdisPay WooCommerce plugin to your WordPress site:</p>
+                    
+                    <pre><code>// Upload virdispay-woocommerce.php to /wp-content/plugins/
+// Activate in WordPress admin
+// Configure your API credentials</code></pre>
+                    
+                    <h3>Step 2: Configure Payment Gateway</h3>
+                    <p>In your WordPress admin, go to WooCommerce → Settings → Payments and enable "VirdisPay Crypto".</p>
+                    
+                    <h3>Step 3: Set Up API Credentials</h3>
+                    <p>Enter your VirdisPay API key and merchant ID in the plugin settings.</p>
+                    
+                    <div class="feature-highlight">
+                        <h4>🔌 Plugin Features</h4>
+                        <ul>
+                            <li>✅ One-click installation</li>
+                            <li>✅ Automatic order confirmation</li>
+                            <li>✅ Real-time price conversion</li>
+                            <li>✅ Mobile QR code payments</li>
+                            <li>✅ Multi-currency support</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="custom-website">
+                    <h2>Custom Website Integration</h2>
+                    
+                    <p>For custom websites, VirdisPay offers flexible integration options that work with any technology stack.</p>
+                    
+                    <h3>Basic HTML Integration</h3>
+                    <p>The simplest way to add crypto payments to any website:</p>
+                    
+                    <pre><code>&lt;!-- Include the SDK --&gt;
+&lt;script src="https://cdn.virdispay.com/sdk/VirdisPaySDK.js"&gt;&lt;/script&gt;
+
+&lt;!-- Add payment container --&gt;
+&lt;div id="virdispay-container"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+const virdisPay = new VirdisPaySDK({
+  apiKey: 'your-api-key',
+  merchantId: 'your-merchant-id'
+});
+
+// Initialize payment widget
+virdisPay.init({
+  containerId: 'virdispay-container',
+  amount: 99.99,
+  currency: 'USDC',
+  orderId: 'order-123',
+  customerEmail: 'customer@example.com',
+  onPaymentComplete: (paymentId) => {
+    console.log('Payment completed:', paymentId);
+    // Handle successful payment
+  },
+  onPaymentError: (error) => {
+    console.error('Payment failed:', error);
+    // Handle payment error
+  }
+});
+&lt;/script&gt;</code></pre>
+                    
+                    <h3>Server-Side Integration</h3>
+                    <p>For more control, integrate directly with our API:</p>
+                    
+                    <pre><code>// Create payment
+const response = await fetch('https://api.virdispay.com/api/payments/create-ecommerce', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-api-key'
+  },
+  body: JSON.stringify({
+    amount: 99.99,
+    currency: 'USDC',
+    orderId: 'order-123',
+    customerEmail: 'customer@example.com',
+    merchantId: 'your-merchant-id'
+  })
+});
+
+const payment = await response.json();
+// Use payment.paymentUrl to redirect customer</code></pre>
+                </section>
+
+                <section id="mobile-optimization">
+                    <h2>Mobile Optimization</h2>
+                    
+                    <p>VirdisPay is designed mobile-first, with several features to enhance the mobile payment experience:</p>
+                    
+                    <div class="mobile-features">
+                        <div class="mobile-feature">
+                            <h3>📱 QR Code Payments</h3>
+                            <p>Customers can scan QR codes with their mobile wallets for instant payments</p>
+                        </div>
+                        <div class="mobile-feature">
+                            <h3>🔗 Wallet Connection</h3>
+                            <p>One-click connection to MetaMask, Coinbase Wallet, and other mobile wallets</p>
+                        </div>
+                        <div class="mobile-feature">
+                            <h3>📱 Responsive Design</h3>
+                            <p>Payment widgets automatically adapt to mobile screen sizes</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="best-practices">
+                    <h2>Best Practices</h2>
+                    
+                    <h3>1. Offer Multiple Payment Options</h3>
+                    <p>Don't replace traditional payments entirely. Offer crypto as an additional option alongside credit cards and other methods.</p>
+                    
+                    <h3>2. Display Crypto Amounts Clearly</h3>
+                    <p>Show both USD and crypto amounts to help customers understand the conversion.</p>
+                    
+                    <h3>3. Provide Payment Instructions</h3>
+                    <p>Include clear instructions for customers who are new to crypto payments.</p>
+                    
+                    <h3>4. Test on Mobile Devices</h3>
+                    <p>Always test your integration on mobile devices to ensure a smooth experience.</p>
+                    
+                    <h3>5. Monitor Payment Status</h3>
+                    <p>Implement webhook handlers to automatically update order status when payments are confirmed.</p>
+                </section>
+
+                <section id="troubleshooting">
+                    <h2>Troubleshooting Common Issues</h2>
+                    
+                    <h3>Payment Widget Not Loading</h3>
+                    <p><strong>Solution:</strong> Check that your API key is correct and your domain is whitelisted in the VirdisPay dashboard.</p>
+                    
+                    <h3>QR Code Not Scanning</h3>
+                    <p><strong>Solution:</strong> Ensure the QR code is displayed at sufficient size and resolution for mobile scanning.</p>
+                    
+                    <h3>Wallet Connection Failing</h3>
+                    <p><strong>Solution:</strong> Verify that the customer has a compatible wallet installed and is on the correct network.</p>
+                    
+                    <h3>Price Conversion Issues</h3>
+                    <p><strong>Solution:</strong> Check that your API is receiving real-time price data and handling currency conversions correctly.</p>
+                </section>
+
+                <div class="article-cta">
+                    <h2>Ready to Add Crypto Payments?</h2>
+                    <p>Start accepting crypto payments on your e-commerce store today. Get started with VirdisPay in minutes.</p>
+                    <a href="https://app.virdispay.com" class="btn btn-primary">Get Started Free</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>VirdisPay</h3>
+                    <p>Professional crypto payments for high-risk industries. Secure, compliant, and built for scale.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#pricing">Pricing</a></li>
+                        <li><a href="../index.html#integration">Integration</a></li>
+                        <li><a href="../index.html#ecommerce">E-commerce</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../compliance.html">Compliance</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../cookie-policy.html">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 VirdisPay. All rights reserved.</p>
+                <p>Non-Custodial • Secure • Compliant</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+</html>
+

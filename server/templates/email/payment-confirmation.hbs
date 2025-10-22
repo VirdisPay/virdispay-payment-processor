@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Confirmation - VirdisPay</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .success-icon {
+            font-size: 48px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+        .payment-summary {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .details-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .details-table td:first-child {
+            font-weight: 600;
+            color: #666;
+            width: 40%;
+        }
+        .savings-highlight {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin: 20px 0;
+        }
+        .network-info {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 14px;
+        }
+        .tx-hash {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🌿 VirdisPay</div>
+            <div class="success-icon">✅</div>
+            <h1 style="color: #28a745; margin: 0;">Payment Confirmed!</h1>
+        </div>
+
+        <div class="content">
+            <p>Great news, {{merchantName}}! A payment has been successfully processed and confirmed on the blockchain.</p>
+
+            <div class="payment-summary">
+                <div class="amount">${{amount}} {{currency}}</div>
+                <p style="margin: 0; color: #666;">Payment successfully received</p>
+            </div>
+
+            <table class="details-table">
+                <tr>
+                    <td>Transaction ID:</td>
+                    <td><strong>{{transactionId}}</strong></td>
+                </tr>
+                <tr>
+                    <td>Customer Email:</td>
+                    <td>{{customerEmail}}</td>
+                </tr>
+                <tr>
+                    <td>Description:</td>
+                    <td>{{description}}</td>
+                </tr>
+                <tr>
+                    <td>Network:</td>
+                    <td>{{network}}</td>
+                </tr>
+                <tr>
+                    <td>Gas Fee:</td>
+                    <td>${{gasFee}}</td>
+                </tr>
+                <tr>
+                    <td>Blockchain Hash:</td>
+                    <td class="tx-hash">{{txHash}}</td>
+                </tr>
+                <tr>
+                    <td>Timestamp:</td>
+                    <td>{{timestamp}}</td>
+                </tr>
+            </table>
+
+            <div class="savings-highlight">
+                <h3 style="margin-top: 0; color: #155724;">💰 Gas Fee Savings</h3>
+                <p style="margin: 0;">You saved <strong>{{savings}}</strong> compared to Ethereum mainnet!</p>
+            </div>
+
+            <div class="network-info">
+                <h4 style="margin-top: 0; color: #1976d2;">🌐 Network Information</h4>
+                <p style="margin: 0;">This payment was processed on the <strong>{{network}}</strong> network, providing ultra-low fees and fast confirmation times.</p>
+            </div>
+
+            <p><strong>What's Next?</strong></p>
+            <ul>
+                <li>Funds are now available in your wallet</li>
+                <li>Transaction is confirmed on the blockchain</li>
+                <li>Customer has been notified of successful payment</li>
+                <li>Transaction recorded in your dashboard</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p><strong>VirdisPay</strong> - Professional Crypto Payments for Cannabis Industry</p>
+            <p>© {{currentYear}} VirdisPay. All rights reserved.</p>
+            <p>Questions? Contact us at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

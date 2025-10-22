@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYC Status Update - VirdisPay</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .status-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .status-approved { color: #28a745; }
+        .status-pending { color: #ffc107; }
+        .status-rejected { color: #dc3545; }
+        .status-progress { color: #17a2b8; }
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            transition: width 0.3s ease;
+        }
+        .status-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .risk-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            margin: 10px 0;
+        }
+        .risk-low { background: #d4edda; color: #155724; }
+        .risk-medium { background: #fff3cd; color: #856404; }
+        .risk-high { background: #f8d7da; color: #721c24; }
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .document-stat {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .next-steps {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2196f3;
+            margin: 20px 0;
+        }
+        .step-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .step-item:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #2196f3;
+            font-weight: bold;
+        }
+        .compliance-notes {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🌿 VirdisPay</div>
+            {{#if (eq status "approved")}}
+                <div class="status-icon status-approved">✅</div>
+                <h1 style="color: #28a745; margin: 0;">KYC Verification Approved!</h1>
+            {{else if (eq status "pending_review")}}
+                <div class="status-icon status-pending">⏳</div>
+                <h1 style="color: #ffc107; margin: 0;">KYC Under Review</h1>
+            {{else if (eq status "rejected")}}
+                <div class="status-icon status-rejected">❌</div>
+                <h1 style="color: #dc3545; margin: 0;">KYC Action Required</h1>
+            {{else}}
+                <div class="status-icon status-progress">📋</div>
+                <h1 style="color: #17a2b8; margin: 0;">KYC Status Update</h1>
+            {{/if}}
+        </div>
+
+        <div class="content">
+            <p>Hello {{merchantName}},</p>
+            
+            {{#if (eq status "approved")}}
+                <p>Congratulations! Your KYC verification has been approved. You can now process payments without restrictions.</p>
+            {{else if (eq status "pending_review")}}
+                <p>Your KYC verification is currently under manual review by our compliance team. This process typically takes 2-5 business days.</p>
+            {{else if (eq status "rejected")}}
+                <p>We need additional information to complete your KYC verification. Please review the requirements below and resubmit your documents.</p>
+            {{else}}
+                <p>Your KYC verification status has been updated. Here are the current details:</p>
+            {{/if}}
+
+            <div class="status-card">
+                <h3 style="margin-top: 0;">Current Status</h3>
+                <div style="margin-bottom: 15px;">
+                    <strong>Status:</strong> 
+                    <span style="text-transform: capitalize;">{{status}}</span>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <strong>Risk Level:</strong>
+                    <span class="risk-badge risk-{{riskLevel}}">{{riskLevel}} Risk</span>
+                </div>
+                <div>
+                    <strong>Progress:</strong> {{progress}}% Complete
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{progress}}%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="documents-grid">
+                <div class="document-stat">
+                    <div class="stat-number">{{documentsVerified}}</div>
+                    <div class="stat-label">Verified</div>
+                </div>
+                <div class="document-stat">
+                    <div class="stat-number">{{documentsSubmitted}}</div>
+                    <div class="stat-label">Submitted</div>
+                </div>
+                <div class="document-stat">
+                    <div class="stat-number">{{documentsRequired}}</div>
+                    <div class="stat-label">Required</div>
+                </div>
+            </div>
+
+            {{#if nextSteps}}
+            <div class="next-steps">
+                <h3 style="margin-top: 0; color: #1976d2;">Next Steps</h3>
+                {{#each nextSteps}}
+                <div class="step-item">{{this}}</div>
+                {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if complianceNotes}}
+            <div class="compliance-notes">
+                <h4 style="margin-top: 0; color: #856404;">📝 Compliance Notes</h4>
+                <p style="margin: 0;">{{complianceNotes}}</p>
+            </div>
+            {{/if}}
+
+            {{#if estimatedProcessingTime}}
+            <p><strong>Estimated Processing Time:</strong> {{estimatedProcessingTime}}</p>
+            {{/if}}
+
+            <div style="text-align: center;">
+                <a href="{{siteUrl}}/dashboard" class="cta-button">View Compliance Dashboard</a>
+            </div>
+
+            <p><strong>Need Help?</strong> If you have any questions about your KYC verification, please contact our support team at <a href="mailto:{{supportEmail}}">{{supportEmail}}</a>.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>VirdisPay</strong> - Professional Crypto Payments for Cannabis Industry</p>
+            <p>© {{currentYear}} VirdisPay. All rights reserved.</p>
+            <p>
+                <a href="{{siteUrl}}/privacy-policy">Privacy Policy</a> | 
+                <a href="{{siteUrl}}/terms-of-service">Terms of Service</a> | 
+                <a href="{{siteUrl}}/compliance">Compliance</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

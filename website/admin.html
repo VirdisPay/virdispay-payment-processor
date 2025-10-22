@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VirdisPay Admin Dashboard</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="images/logo.png" alt="VirdisPay">
+                <span>VirdisPay Admin</span>
+            </div>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item active" data-tab="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-tab="transactions">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </li>
+                <li class="nav-item" data-tab="merchants">
+                    <i class="fas fa-store"></i>
+                    <span>Merchants</span>
+                </li>
+                <li class="nav-item" data-tab="analytics">
+                    <i class="fas fa-analytics"></i>
+                    <span>Analytics</span>
+                </li>
+                <li class="nav-item" data-tab="revenue">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Revenue</span>
+                </li>
+                <li class="nav-item" data-tab="support">
+                    <i class="fas fa-headset"></i>
+                    <span>Support</span>
+                </li>
+                <li class="nav-item" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Admin Dashboard</h1>
+            </div>
+            
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; font-size: 16px;">A</div>
+                    <span class="user-name">Admin User</span>
+                </div>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Dashboard Tab -->
+        <div class="tab-content active" id="dashboard">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>$12,450</h3>
+                        <p>Monthly Revenue</p>
+                        <span class="stat-change positive">+15.3%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>2,847</h3>
+                        <p>Transactions</p>
+                        <span class="stat-change positive">+8.7%</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>156</h3>
+                        <p>Active Merchants</p>
+                        <span class="stat-change positive">+12</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>99.98%</h3>
+                        <p>Average Savings</p>
+                        <span class="stat-change neutral">Stable</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-row">
+                <div class="chart-container">
+                    <h3>Revenue Trend</h3>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Transaction Volume</h3>
+                    <canvas id="transactionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>GreenLeaf CBD</strong> signed up for Professional plan</p>
+                            <span class="activity-time">2 minutes ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>Large transaction: <strong>$2,500</strong> processed on Polygon</p>
+                            <span class="activity-time">5 minutes ago</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p>New support ticket from <strong>HempStore UK</strong></p>
+                            <span class="activity-time">12 minutes ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transactions Tab -->
+        <div class="tab-content" id="transactions">
+            <div class="page-header">
+                <h2>Transaction Management</h2>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Export Data
+                    </button>
+                </div>
+            </div>
+            
+            <div class="filters">
+                <select class="filter-select">
+                    <option>All Networks</option>
+                    <option>Polygon</option>
+                    <option>Ethereum</option>
+                    <option>BSC</option>
+                </select>
+                
+                <select class="filter-select">
+                    <option>All Status</option>
+                    <option>Completed</option>
+                    <option>Pending</option>
+                    <option>Failed</option>
+                </select>
+                
+                <input type="date" class="filter-date" placeholder="Date Range">
+            </div>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Merchant</th>
+                            <th>Amount</th>
+                            <th>Network</th>
+                            <th>Fee</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#TX-001234</td>
+                            <td>CBD Store London</td>
+                            <td>$99.99</td>
+                            <td><span class="network-badge polygon">Polygon</span></td>
+                            <td>$0.05</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>2024-01-15 14:30</td>
+                            <td>
+                                <button class="btn-icon" title="View Details">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>#TX-001235</td>
+                            <td>Hemp Co UK</td>
+                            <td>$250.00</td>
+                            <td><span class="network-badge ethereum">Ethereum</span></td>
+                            <td>$0.05</td>
+                            <td><span class="status-badge completed">Completed</span></td>
+                            <td>2024-01-15 14:25</td>
+                            <td>
+                                <button class="btn-icon" title="View Details">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Merchants Tab -->
+        <div class="tab-content" id="merchants">
+            <div class="page-header">
+                <h2>Merchant Management</h2>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-user-plus"></i>
+                        Add Merchant
+                    </button>
+                </div>
+            </div>
+            
+            <div class="merchants-grid">
+                <div class="merchant-card">
+                    <div class="merchant-header">
+                        <div class="merchant-info">
+                            <h4>CBD Store London</h4>
+                            <p>Professional Plan</p>
+                        </div>
+                        <span class="status-badge active">Active</span>
+                    </div>
+                    <div class="merchant-stats">
+                        <div class="merchant-stat">
+                            <span class="stat-label">Transactions</span>
+                            <span class="stat-value">247</span>
+                        </div>
+                        <div class="merchant-stat">
+                            <span class="stat-label">Volume</span>
+                            <span class="stat-value">$12,450</span>
+                        </div>
+                    </div>
+                    <div class="merchant-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-primary">Contact</button>
+                    </div>
+                </div>
+                
+                <div class="merchant-card">
+                    <div class="merchant-header">
+                        <div class="merchant-info">
+                            <h4>Hemp Co UK</h4>
+                            <p>Starter Plan</p>
+                        </div>
+                        <span class="status-badge pending">Pending</span>
+                    </div>
+                    <div class="merchant-stats">
+                        <div class="merchant-stat">
+                            <span class="stat-label">Transactions</span>
+                            <span class="stat-value">89</span>
+                        </div>
+                        <div class="merchant-stat">
+                            <span class="stat-label">Volume</span>
+                            <span class="stat-value">$4,250</span>
+                        </div>
+                    </div>
+                    <div class="merchant-actions">
+                        <button class="btn btn-outline">View Details</button>
+                        <button class="btn btn-primary">Contact</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Tab -->
+        <div class="tab-content" id="analytics">
+            <div class="page-header">
+                <h2>Website Analytics</h2>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open Google Analytics
+                    </button>
+                </div>
+            </div>
+            
+            <div class="analytics-grid">
+                <div class="analytics-card">
+                    <h3>Traffic Overview</h3>
+                    <div class="analytics-stats">
+                        <div class="analytics-stat">
+                            <span class="stat-number">2,847</span>
+                            <span class="stat-label">Page Views</span>
+                        </div>
+                        <div class="analytics-stat">
+                            <span class="stat-number">1,234</span>
+                            <span class="stat-label">Unique Visitors</span>
+                        </div>
+                        <div class="analytics-stat">
+                            <span class="stat-number">3.2%</span>
+                            <span class="stat-label">Conversion Rate</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Top Pages</h3>
+                    <div class="page-stats">
+                        <div class="page-stat">
+                            <span class="page-name">Homepage</span>
+                            <span class="page-views">1,245 views</span>
+                        </div>
+                        <div class="page-stat">
+                            <span class="page-name">Pricing</span>
+                            <span class="page-views">892 views</span>
+                        </div>
+                        <div class="page-stat">
+                            <span class="page-name">Demo</span>
+                            <span class="page-views">567 views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analytics-card">
+                    <h3>Traffic Sources</h3>
+                    <canvas id="trafficChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Tab -->
+        <div class="tab-content" id="revenue">
+            <div class="page-header">
+                <h2>Revenue Analytics</h2>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Generate Report
+                    </button>
+                </div>
+            </div>
+            
+            <div class="revenue-breakdown">
+                <div class="revenue-card">
+                    <h3>Revenue Sources</h3>
+                    <div class="revenue-sources">
+                        <div class="revenue-source">
+                            <div class="source-info">
+                                <span class="source-name">Subscriptions</span>
+                                <span class="source-amount">$8,950</span>
+                            </div>
+                            <div class="source-bar">
+                                <div class="source-progress" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="revenue-source">
+                            <div class="source-info">
+                                <span class="source-name">Transaction Fees</span>
+                                <span class="source-amount">$3,500</span>
+                            </div>
+                            <div class="source-bar">
+                                <div class="source-progress" style="width: 28%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="revenue-card">
+                    <h3>Monthly Growth</h3>
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Tab -->
+        <div class="tab-content" id="support">
+            <div class="page-header">
+                <h2>Support Tickets</h2>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        New Ticket
+                    </button>
+                </div>
+            </div>
+            
+            <div class="support-tickets">
+                <div class="ticket-item">
+                    <div class="ticket-header">
+                        <span class="ticket-id">#TICKET-001</span>
+                        <span class="ticket-status open">Open</span>
+                    </div>
+                    <div class="ticket-content">
+                        <h4>Integration Help Needed</h4>
+                        <p>HempStore UK needs assistance with API integration</p>
+                        <span class="ticket-meta">From: HempStore UK | 2 hours ago</span>
+                    </div>
+                </div>
+                
+                <div class="ticket-item">
+                    <div class="ticket-header">
+                        <span class="ticket-id">#TICKET-002</span>
+                        <span class="ticket-status resolved">Resolved</span>
+                    </div>
+                    <div class="ticket-content">
+                        <h4>Payment Processing Issue</h4>
+                        <p>CBD Store London reporting slow transaction processing</p>
+                        <span class="ticket-meta">From: CBD Store London | 1 day ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="tab-content" id="settings">
+            <div class="page-header">
+                <h2>System Settings</h2>
+            </div>
+            
+            <div class="settings-grid">
+                <div class="settings-card">
+                    <h3>Transaction Settings</h3>
+                    <div class="setting-item">
+                        <label>Transaction Fee</label>
+                        <input type="text" value="$0.05" class="setting-input">
+                    </div>
+                    <div class="setting-item">
+                        <label>Minimum Transaction</label>
+                        <input type="text" value="$1.00" class="setting-input">
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h3>Email Settings</h3>
+                    <div class="setting-item">
+                        <label>Support Email</label>
+                        <input type="email" value="support@virdispay.com" class="setting-input">
+                    </div>
+                    <div class="setting-item">
+                        <label>Notifications</label>
+                        <input type="checkbox" checked> Email notifications
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+

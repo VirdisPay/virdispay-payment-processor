@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Integrate Crypto Payments into Your Cannabis Website: A Step-by-Step Guide | VirdisPay Blog</title>
+    <meta name="description" content="Complete guide to integrating cryptocurrency payments into your cannabis business website. From API integration to widget implementation, learn everything you need to know.">
+    <meta name="keywords" content="crypto payments integration, cannabis website payments, payment widget, API integration, cannabis e-commerce, payment processing setup">
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/blog.css">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+        <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../images/logo.png" alt="VirdisPay" class="logo">
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#features" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#pricing" class="nav-link">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../blog.html" class="nav-link active">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://app.virdispay.com" class="nav-link nav-cta">Get Started</a>
+                </li>
+            </ul>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="blog-article">
+        <div class="container">
+            <article>
+                <div class="article-header">
+                    <span class="article-category">Integration</span>
+                    <h1>How to Integrate Crypto Payments into Your Cannabis Website: A Step-by-Step Guide</h1>
+                    <div class="article-meta-large">
+                        <span><i class="fas fa-user"></i> By VirdisPay Team</span>
+                        <span><i class="fas fa-calendar"></i> February 2, 2024</span>
+                        <span><i class="fas fa-clock"></i> 13 min read</span>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p>Integrating cryptocurrency payments into your cannabis website can seem daunting, but with the right approach and tools, it can be straightforward and highly beneficial. Whether you're running a CBD e-commerce store, a cannabis dispensary website, or a hemp product marketplace, crypto payments offer significant advantages over traditional payment methods.</p>
+
+                    <p>This comprehensive guide walks you through every step of integrating crypto payments into your cannabis website, from initial setup to advanced customization, ensuring you can accept cryptocurrency payments efficiently and securely.</p>
+
+                    <h2>Why Integrate Crypto Payments for Cannabis Websites?</h2>
+
+                    <h3>Key Benefits for Cannabis Businesses</h3>
+
+                    <p>Cryptocurrency payments offer several advantages for cannabis websites:</p>
+
+                    <ul>
+                        <li><strong>Banking Independence:</strong> No reliance on traditional banking relationships</li>
+                        <li><strong>Lower Costs:</strong> 99.98% reduction in payment processing fees</li>
+                        <li><strong>Global Reach:</strong> Accept payments from customers worldwide</li>
+                        <li><strong>Enhanced Security:</strong> Blockchain-based security for all transactions</li>
+                        <li><strong>Regulatory Compliance:</strong> Built-in compliance with crypto regulations</li>
+                        <li><strong>Customer Privacy:</strong> Enhanced privacy for sensitive transactions</li>
+                    </ul>
+
+                    <h3>Technical Advantages</h3>
+
+                    <ul>
+                        <li><strong>Smart Payment Routing:</strong> Automatic optimization for cost and speed</li>
+                        <li><strong>Real-Time Processing:</strong> Instant transaction confirmations</li>
+                        <li><strong>API Integration:</strong> Easy integration with existing systems</li>
+                        <li><strong>Customizable Widgets:</strong> Flexible payment interface options</li>
+                        <li><strong>Analytics Integration:</strong> Comprehensive transaction analytics</li>
+                    </ul>
+
+                    <blockquote>
+                        "Integrating crypto payments into your cannabis website is not just about accepting a new payment method—it's about future-proofing your business and providing customers with the secure, cost-effective payment experience they deserve."
+                    </blockquote>
+
+                    <h2>Pre-Integration Planning</h2>
+
+                    <h3>Technical Requirements Assessment</h3>
+
+                    <p>Before integrating crypto payments, assess your technical setup:</p>
+
+                    <ul>
+                        <li><strong>Website Platform:</strong> WordPress, Shopify, WooCommerce, or custom solution</li>
+                        <li><strong>Hosting Environment:</strong> Shared hosting, VPS, or dedicated server</li>
+                        <li><strong>SSL Certificate:</strong> Ensure HTTPS is properly configured</li>
+                        <li><strong>Database Setup:</strong> Database for storing transaction records</li>
+                        <li><strong>Backup Systems:</strong> Regular backup procedures in place</li>
+                    </ul>
+
+                    <h3>Business Requirements</h3>
+
+                    <ul>
+                        <li><strong>Payment Methods:</strong> Which cryptocurrencies to accept</li>
+                        <li><strong>Transaction Limits:</strong> Minimum and maximum transaction amounts</li>
+                        <li><strong>Customer Experience:</strong> Payment flow and user interface preferences</li>
+                        <li><strong>Compliance Needs:</strong> Regulatory requirements for your jurisdiction</li>
+                        <li><strong>Analytics Requirements:</strong> What data you need to track</li>
+                    </ul>
+
+                    <h2>Integration Methods</h2>
+
+                    <h3>1. Widget Integration (Easiest)</h3>
+
+                    <p>The simplest way to add crypto payments is using a payment widget:</p>
+
+                    <h4>Step 1: Add the Widget Script</h4>
+
+                    <pre><code>&lt;!-- Add this to your website's head section --&gt;
+&lt;script src="https://widgets.virdispay.com/virdispay-widget.js"&gt;&lt;/script&gt;</code></pre>
+
+                    <h4>Step 2: Create Payment Buttons</h4>
+
+                    <pre><code>&lt;!-- Basic payment button --&gt;
+&lt;div data-virdispay-widget="button"
+     data-api-key="pk_live_YOUR_API_KEY"
+     data-amount="99.99"
+     data-currency="USD"
+     data-description="Premium CBD Oil 1000mg"&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+  VirdisPay.init({
+    apiKey: 'pk_live_YOUR_API_KEY',
+    onSuccess: function(payment) {
+      console.log('Payment successful!', payment);
+      window.location.href = '/thank-you';
+    }
+  });
+&lt;/script&gt;</code></pre>
+
+                    <p><strong>🔒 Security:</strong> Get your API key from the VirdisPay merchant dashboard under "API Keys".</p>
+
+                    <h4>Step 3: Customize Button Styling</h4>
+
+                    <pre><code>&lt;style&gt;
+.virdis-pay-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.virdis-pay-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+&lt;/style&gt;</code></pre>
+
+                    <h3>2. API Integration (Advanced)</h3>
+
+                    <p>For more control, integrate directly with the VirdisPay API:</p>
+
+                    <h4>Step 1: Get API Credentials</h4>
+
+                    <p>Obtain your API key from the VirdisPay merchant dashboard:</p>
+
+                    <pre><code>const VIRDIS_API_KEY = 'your_api_key_here';
+const VIRDIS_API_URL = 'https://api.virdispay.com';</code></pre>
+
+                    <h4>Step 2: Create Payment Function</h4>
+
+                    <pre><code>async function createCryptoPayment(paymentData) {
+    try {
+        const response = await fetch(`${VIRDIS_API_URL}/api/payments/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${VIRDIS_API_KEY}`
+            },
+            body: JSON.stringify({
+                amount: paymentData.amount,
+                currency: paymentData.currency || 'USDC',
+                description: paymentData.description,
+                customer_email: paymentData.email,
+                order_id: paymentData.orderId,
+                metadata: paymentData.metadata || {}
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to create payment');
+        }
+
+        const payment = await response.json();
+        return payment;
+    } catch (error) {
+        console.error('Payment creation error:', error);
+        throw error;
+    }
+}</code></pre>
+
+                    <h4>Step 3: Handle Payment Response</h4>
+
+                    <pre><code>function handlePaymentResponse(payment) {
+    if (payment.status === 'pending') {
+        // Redirect to payment page
+        window.location.href = payment.payment_url;
+    } else if (payment.status === 'completed') {
+        // Payment completed
+        showSuccessMessage(payment);
+    } else {
+        // Handle error
+        showErrorMessage(payment.error);
+    }
+}</code></pre>
+
+                    <h3>3. E-commerce Platform Integration</h3>
+
+                    <h4>WooCommerce Integration</h4>
+
+                    <p>For WordPress/WooCommerce sites:</p>
+
+                    <ol>
+                        <li><strong>Install Plugin:</strong> Install the VirdisPay WooCommerce plugin</li>
+                        <li><strong>Configure Settings:</strong> Enter your merchant ID and API credentials</li>
+                        <li><strong>Enable Payment Method:</strong> Enable crypto payments in WooCommerce settings</li>
+                        <li><strong>Test Integration:</strong> Test with small transactions</li>
+                    </ol>
+
+                    <h4>Shopify Integration</h4>
+
+                    <p>For Shopify stores:</p>
+
+                    <ol>
+                        <li><strong>Install App:</strong> Install VirdisPay from Shopify App Store</li>
+                        <li><strong>Connect Account:</strong> Connect your VirdisPay merchant account</li>
+                        <li><strong>Configure Settings:</strong> Set up payment preferences</li>
+                        <li><strong>Activate Payments:</strong> Enable crypto payments in checkout</li>
+                    </ol>
+
+                    <h2>Platform-Specific Integration Guides</h2>
+
+                    <h3>WordPress Integration</h3>
+
+                    <p>For WordPress websites, you have several integration options:</p>
+
+                    <h4>Method 1: Plugin Installation</h4>
+
+                    <ol>
+                        <li>Download the VirdisPay WordPress plugin</li>
+                        <li>Upload to your WordPress site</li>
+                        <li>Activate the plugin</li>
+                        <li>Configure your merchant settings</li>
+                        <li>Add payment buttons to pages/posts</li>
+                    </ol>
+
+                    <h4>Method 2: Manual Integration</h4>
+
+                    <pre><code>&lt;!-- Add to your WordPress theme's functions.php --&gt;
+function add_virdispay_scripts() {
+    wp_enqueue_script('virdispay-widget', 'https://pay.virdispay.com/js/virdispay-widget.js', array(), '1.0.0', true);
+}
+add_action('wp_enqueue_scripts', 'add_virdispay_scripts');
+
+// Add shortcode for payment buttons
+function virdispay_button_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'amount' => '0',
+        'currency' => 'USDC',
+        'description' => 'Payment',
+        'merchant_id' => get_option('virdispay_merchant_id')
+    ), $atts);
+
+    return sprintf(
+        '&lt;button class="virdis-pay-button" data-merchant-id="%s" data-amount="%s" data-currency="%s" data-description="%s"&gt;Pay %s %s&lt;/button&gt;',
+        esc_attr($atts['merchant_id']),
+        esc_attr($atts['amount']),
+        esc_attr($atts['currency']),
+        esc_attr($atts['description']),
+        esc_attr($atts['amount']),
+        esc_attr($atts['currency'])
+    );
+}
+add_shortcode('virdispay_button', 'virdispay_button_shortcode');</code></pre>
+
+                    <h3>Custom Website Integration</h3>
+
+                    <p>For custom-built websites, you have maximum flexibility:</p>
+
+                    <h4>Frontend Integration</h4>
+
+                    <pre><code>class VirdisPayIntegration {
+    constructor(merchantId, apiKey) {
+        this.merchantId = merchantId;
+        this.apiKey = apiKey;
+        this.apiUrl = 'https://api.virdispay.com';
+    }
+
+    async createPayment(paymentData) {
+        const response = await fetch(`${this.apiUrl}/api/payments/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${this.apiKey}`
+            },
+            body: JSON.stringify({
+                merchant_id: this.merchantId,
+                ...paymentData
+            })
+        });
+
+        return await response.json();
+    }
+
+    renderPaymentButton(elementId, paymentData) {
+        const button = document.createElement('button');
+        button.className = 'virdis-pay-button';
+        button.innerHTML = `Pay ${paymentData.amount} ${paymentData.currency}`;
+        
+        Object.keys(paymentData).forEach(key => {
+            button.setAttribute(`data-${key.replace(/_/g, '-')}`, paymentData[key]);
+        });
+
+        button.addEventListener('click', async () => {
+            try {
+                const payment = await this.createPayment(paymentData);
+                this.handlePayment(payment);
+            } catch (error) {
+                console.error('Payment error:', error);
+            }
+        });
+
+        document.getElementById(elementId).appendChild(button);
+    }
+
+    handlePayment(payment) {
+        if (payment.payment_url) {
+            window.location.href = payment.payment_url;
+        }
+    }
+}</code></pre>
+
+                    <h2>Advanced Customization</h2>
+
+                    <h3>Custom Payment Flow</h3>
+
+                    <p>Create a custom payment experience:</p>
+
+                    <pre><code>function createCustomPaymentFlow() {
+    // Step 1: Product Selection
+    const product = document.querySelector('.product-selected');
+    
+    // Step 2: Customer Information
+    const customerEmail = document.getElementById('customer-email').value;
+    
+    // Step 3: Payment Method Selection
+    const paymentMethod = document.querySelector('input[name="payment-method"]:checked').value;
+    
+    // Step 4: Create Payment
+    if (paymentMethod === 'crypto') {
+        createCryptoPayment({
+            amount: product.dataset.price,
+            currency: 'USDC',
+            description: product.dataset.description,
+            customer_email: customerEmail,
+            order_id: generateOrderId()
+        });
+    }
+}</code></pre>
+
+                    <h3>Multi-Currency Support</h3>
+
+                    <pre><code>function createMultiCurrencyPayment(amount, baseCurrency) {
+    const supportedCurrencies = ['USDC', 'USDT', 'DAI', 'ETH'];
+    const exchangeRates = await getExchangeRates();
+    
+    const paymentOptions = supportedCurrencies.map(currency => {
+        const rate = exchangeRates[currency] || 1;
+        const convertedAmount = (amount / rate).toFixed(2);
+        
+        return {
+            currency: currency,
+            amount: convertedAmount,
+            rate: rate
+        };
+    });
+    
+    renderCurrencySelector(paymentOptions);
+}</code></pre>
+
+                    <h3>Real-Time Price Updates</h3>
+
+                    <pre><code>class RealTimePricing {
+    constructor() {
+        this.priceUpdateInterval = 30000; // 30 seconds
+        this.startPriceUpdates();
+    }
+
+    startPriceUpdates() {
+        setInterval(() => {
+            this.updateCryptoPrices();
+        }, this.priceUpdateInterval);
+    }
+
+    async updateCryptoPrices() {
+        try {
+            const prices = await fetch('/api/crypto-prices').then(r => r.json());
+            
+            document.querySelectorAll('.crypto-price').forEach(element => {
+                const currency = element.dataset.currency;
+                const amount = element.dataset.amount;
+                const newPrice = (amount * prices[currency]).toFixed(2);
+                
+                element.textContent = `${newPrice} ${currency}`;
+            });
+        } catch (error) {
+            console.error('Price update error:', error);
+        }
+    }
+}</code></pre>
+
+                    <h2>Testing and Quality Assurance</h2>
+
+                    <h3>Test Environment Setup</h3>
+
+                    <p>Set up a comprehensive testing environment:</p>
+
+                    <ul>
+                        <li><strong>Testnet Integration:</strong> Use testnet for development and testing</li>
+                        <li><strong>Mock Data:</strong> Create mock payment data for testing</li>
+                        <li><strong>Error Scenarios:</strong> Test various error conditions</li>
+                        <li><strong>Performance Testing:</strong> Test under different load conditions</li>
+                        <li><strong>Cross-Browser Testing:</strong> Ensure compatibility across browsers</li>
+                    </ul>
+
+                    <h3>Testing Checklist</h3>
+
+                    <ul>
+                        <li>✅ Payment button renders correctly</li>
+                        <li>✅ Payment flow completes successfully</li>
+                        <li>✅ Error handling works properly</li>
+                        <li>✅ Mobile responsiveness</li>
+                        <li>✅ SSL certificate validation</li>
+                        <li>✅ API integration functions</li>
+                        <li>✅ Transaction recording</li>
+                        <li>✅ Email notifications</li>
+                    </ul>
+
+                    <h2>Security Considerations</h2>
+
+                    <h3>Data Protection</h3>
+
+                    <p>Ensure proper data protection:</p>
+
+                    <ul>
+                        <li><strong>HTTPS Only:</strong> All payment pages must use HTTPS</li>
+                        <li><strong>Data Encryption:</strong> Encrypt sensitive data in transit and at rest</li>
+                        <li><strong>Input Validation:</strong> Validate all user inputs</li>
+                        <li><strong>API Security:</strong> Secure API keys and credentials</li>
+                        <li><strong>Regular Updates:</strong> Keep all systems updated</li>
+                    </ul>
+
+                    <h3>Compliance Requirements</h3>
+
+                    <ul>
+                        <li><strong>PCI DSS:</strong> Follow payment card industry standards</li>
+                        <li><strong>GDPR:</strong> Comply with European data protection regulations</li>
+                        <li><strong>CCPA:</strong> Comply with California consumer privacy regulations</li>
+                        <li><strong>Cannabis Regulations:</strong> Follow cannabis industry compliance requirements</li>
+                        <li><strong>Audit Trails:</strong> Maintain complete transaction audit trails</li>
+                    </ul>
+
+                    <h2>Performance Optimization</h2>
+
+                    <h3>Loading Speed Optimization</h3>
+
+                    <ul>
+                        <li><strong>Async Loading:</strong> Load payment scripts asynchronously</li>
+                        <li><strong>CDN Usage:</strong> Use content delivery networks for faster loading</li>
+                        <li><strong>Minification:</strong> Minify JavaScript and CSS files</li>
+                        <li><strong>Caching:</strong> Implement proper caching strategies</li>
+                        <li><strong>Image Optimization:</strong> Optimize images for web delivery</li>
+                    </ul>
+
+                    <h3>Mobile Optimization</h3>
+
+                    <ul>
+                        <li><strong>Responsive Design:</strong> Ensure mobile-friendly payment interface</li>
+                        <li><strong>Touch Optimization:</strong> Optimize for touch interactions</li>
+                        <li><strong>Fast Loading:</strong> Optimize for mobile network speeds</li>
+                        <li><strong>App Integration:</strong> Consider mobile app integration</li>
+                    </ul>
+
+                    <h2>Monitoring and Analytics</h2>
+
+                    <h3>Transaction Monitoring</h3>
+
+                    <p>Implement comprehensive monitoring:</p>
+
+                    <ul>
+                        <li><strong>Real-Time Alerts:</strong> Set up alerts for failed transactions</li>
+                        <li><strong>Performance Metrics:</strong> Monitor payment processing performance</li>
+                        <li><strong>Error Tracking:</strong> Track and analyze payment errors</li>
+                        <li><strong>User Analytics:</strong> Monitor user behavior and conversion rates</li>
+                    </ul>
+
+                    <h3>Business Intelligence</h3>
+
+                    <ul>
+                        <li><strong>Revenue Tracking:</strong> Monitor crypto payment revenue</li>
+                        <li><strong>Customer Analytics:</strong> Analyze customer payment preferences</li>
+                        <li><strong>Conversion Optimization:</strong> Optimize payment conversion rates</li>
+                        <li><strong>Cost Analysis:</strong> Track payment processing costs</li>
+                    </ul>
+
+                    <h2>Common Integration Challenges and Solutions</h2>
+
+                    <h3>Challenge 1: SSL Certificate Issues</h3>
+
+                    <p><strong>Problem:</strong> Payment widgets not loading due to SSL issues.</p>
+                    <p><strong>Solution:</strong> Ensure proper SSL certificate installation and configuration.</p>
+
+                    <h3>Challenge 2: CORS Errors</h3>
+
+                    <p><strong>Problem:</strong> Cross-origin resource sharing errors when calling APIs.</p>
+                    <p><strong>Solution:</strong> Configure proper CORS headers or use proxy servers.</p>
+
+                    <h3>Challenge 3: Mobile Compatibility</h3>
+
+                    <p><strong>Problem:</strong> Payment interface not working properly on mobile devices.</p>
+                    <p><strong>Solution:</strong> Test thoroughly on mobile devices and implement responsive design.</p>
+
+                    <h2>Conclusion: Successfully Integrating Crypto Payments</h2>
+
+                    <p>Integrating cryptocurrency payments into your cannabis website is a strategic move that can significantly benefit your business. With proper planning, implementation, and testing, you can provide customers with a secure, cost-effective, and user-friendly payment experience.</p>
+
+                    <p>Key success factors:</p>
+
+                    <ul>
+                        <li><strong>Choose the Right Integration Method:</strong> Select the approach that best fits your technical capabilities</li>
+                        <li><strong>Focus on User Experience:</strong> Ensure the payment process is smooth and intuitive</li>
+                        <li><strong>Implement Proper Security:</strong> Protect customer data and transactions</li>
+                        <li><strong>Test Thoroughly:</strong> Comprehensive testing ensures reliable operation</li>
+                        <li><strong>Monitor Performance:</strong> Continuous monitoring helps optimize the payment experience</li>
+                    </ul>
+
+                    <blockquote>
+                        "Successful crypto payment integration is about more than just adding a payment method—it's about creating a seamless, secure, and cost-effective payment experience that enhances your customers' overall shopping experience and drives business growth."
+                    </blockquote>
+
+                    <p>Ready to integrate crypto payments into your cannabis website? <a href="https://app.virdispay.com">Get started with VirdisPay today</a> and provide your customers with the modern payment experience they deserve.</p>
+                </div>
+
+                <div class="article-navigation">
+                    <a href="crypto-payment-analytics-cannabis-businesses.html" class="article-nav-link prev">
+                        <i class="fas fa-arrow-left"></i>
+                        Previous Article
+                    </a>
+                    <a href="../blog.html" class="article-nav-link next">
+                        Back to Blog
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo.png" alt="VirdisPay" class="logo">
+                    </div>
+                    <p>Professional crypto payment processing for the cannabis industry.</p>
+                    
+                    <div class="social-links">
+                        <a href="https://twitter.com/VirdisPay" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/VirdisPay" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/VirdisPay" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Follow us on Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://linkedin.com/company/virdispay" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="../index.html#features">Features</a></li>
+                        <li><a href="../index.html#pricing">Pricing</a></li>
+                        <li><a href="../index.html#integration">Integration</a></li>
+                        <li><a href="../widgets/examples.html">Documentation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                        <li><a href="../index.html#industries">Industries</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../blog.html">Help Center</a></li>
+                        
+                        
+                        <li><a href="../index.html#contact">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="../terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="../cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="../compliance.html">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 VirdisPay. All rights reserved.</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <p>VirdisPay is a registered trademark. Crypto payments are processed through secure smart contracts.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
+
