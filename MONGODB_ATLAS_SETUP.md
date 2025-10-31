@@ -16,7 +16,7 @@ Since Render doesn't have MongoDB as a managed service, we'll use MongoDB Atlas 
 3. Choose:
    - **Cloud Provider:** AWS (or any)
    - **Region:** Choose closest to you (Oregon/us-west-2 is good)
-   - **Cluster Name:** `VirdisPay-Cluster` (or your choice)
+   - **Cluster Name:** `your-cluster-name` (or your choice)
 4. Click **"Create Cluster"**
 5. Wait 3-5 minutes for cluster to be created
 
@@ -25,7 +25,7 @@ Since Render doesn't have MongoDB as a managed service, we'll use MongoDB Atlas 
 1. Go to **"Database Access"** (left sidebar)
 2. Click **"Add New Database User"**
 3. Choose **"Password"** authentication
-4. Username: `virdispay-user` (or your choice)
+4. Username: `your-username` (create your own username)
 5. Password: Generate or create strong password (SAVE THIS!)
 6. Database User Privileges: **"Atlas Admin"** or **"Read and write to any database"**
 7. Click **"Add User"**
@@ -49,7 +49,7 @@ Since Render doesn't have MongoDB as a managed service, we'll use MongoDB Atlas 
 
 It looks like:
 ```
-mongodb+srv://virdispay-user:<password>@virdispay-cluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
+mongodb+srv://your-username:<password>@your-cluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
 ```
 
 ## Step 6: Replace Password in Connection String
@@ -59,7 +59,7 @@ In the connection string you copied, replace:
 
 For example:
 ```
-mongodb+srv://virdispay-user:YourPassword123@virdispay-cluster.xxxxx.mongodb.net/virdispay-payments?retryWrites=true&w=majority
+mongodb+srv://your-username:your-password@your-cluster.xxxxx.mongodb.net/your-database?retryWrites=true&w=majority
 ```
 
 ## Step 7: Add to Render Environment Variables
@@ -68,10 +68,10 @@ In your Render web service → Environment Variables:
 
 **Add:**
 ```
-MONGODB_URI=mongodb+srv://virdispay-user:YourPassword123@virdispay-cluster.xxxxx.mongodb.net/virdispay-payments?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.xxxxx.mongodb.net/your-database?retryWrites=true&w=majority
 ```
 
-(Replace with your actual connection string!)
+(Replace with your actual connection string from Step 5!)
 
 ---
 
