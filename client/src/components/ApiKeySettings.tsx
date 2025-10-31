@@ -33,7 +33,7 @@ const ApiKeySettings: React.FC = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem('token');
-      const response = await axios.get(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/api-keys`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_URL || ''}/api/api-keys`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -53,7 +53,7 @@ const ApiKeySettings: React.FC = () => {
 
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/api-keys/generate`,
+        `${process.env.REACT_APP_API_URL || ''}/api/api-keys/generate`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -81,7 +81,7 @@ const ApiKeySettings: React.FC = () => {
 
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/api-keys/regenerate`,
+        `${process.env.REACT_APP_API_URL || ''}/api/api-keys/regenerate`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -111,7 +111,7 @@ const ApiKeySettings: React.FC = () => {
 
       const token = localStorage.getItem('token');
       await axios.post(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/api-keys/domains`,
+        `${process.env.REACT_APP_API_URL || ''}/api/api-keys/domains`,
         { domain: newDomain },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -135,7 +135,7 @@ const ApiKeySettings: React.FC = () => {
 
       const token = localStorage.getItem('token');
       await axios.delete(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/api-keys/domains/${encodeURIComponent(domain)}`,
+        `${process.env.REACT_APP_API_URL || ''}/api/api-keys/domains/${encodeURIComponent(domain)}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

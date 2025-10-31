@@ -33,7 +33,7 @@ const ProfileSettings: React.FC<ProfileSettingsProps> = ({ onUpdateUser }) => {
       setLoading(true);
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/me`,
+        `${process.env.REACT_APP_API_URL || ''}/api/auth/me`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -62,7 +62,7 @@ const ProfileSettings: React.FC<ProfileSettingsProps> = ({ onUpdateUser }) => {
 
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/auth/profile`,
+        `${process.env.REACT_APP_API_URL || ''}/api/auth/profile`,
         profileData,
         { headers: { Authorization: `Bearer ${token}` } }
       );

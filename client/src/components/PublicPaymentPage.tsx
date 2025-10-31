@@ -18,7 +18,7 @@ const PublicPaymentPage: React.FC = () => {
   const [txHash, setTxHash] = useState('');
   const [paymentStatus, setPaymentStatus] = useState<'pending' | 'processing' | 'completed' | 'failed'>('pending');
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL || '';
 
   // Fetch payment data on mount
   useEffect(() => {

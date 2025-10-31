@@ -62,7 +62,7 @@ const OnboardingFlow: React.FC<OnboardingFlowProps> = ({
     try {
       // Update user profile with selected tier and wallet
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       
       const updateData: any = {
         subscriptionTier: selectedTier || 'free'

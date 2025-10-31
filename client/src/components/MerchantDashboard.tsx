@@ -98,7 +98,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
   const loadRecentTransactions = async () => {
     try {
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       const response = await fetch(`${API_URL}/api/payments/merchant/${user?.id}?limit=5`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -118,7 +118,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
     setKycLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       const response = await fetch(`${API_URL}/api/auth/kyc-status`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -166,7 +166,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
       formData.append('documentType', documentType);
 
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       const response = await fetch(`${API_URL}/api/kyc/documents`, {
         method: 'POST',
         headers: {
@@ -199,7 +199,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
     try {
       setKycLoading(true);
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       
       const response = await fetch(`${API_URL}/api/kyc/submit`, {
         method: 'POST',
@@ -231,7 +231,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
     try {
       setKycLoading(true);
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       
       const response = await fetch(`${API_URL}/api/kyc/documents/${documentId}`, {
         method: 'DELETE',
@@ -283,7 +283,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
 
     try {
       const token = localStorage.getItem('token');
-      const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+      const API_URL = process.env.REACT_APP_API_URL || '';
       const response = await fetch(`${API_URL}/api/payments/create`, {
         method: 'POST',
         headers: {

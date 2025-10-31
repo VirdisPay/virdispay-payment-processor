@@ -90,7 +90,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ user, onLogout }) => {
   const [kycSearch, setKycSearch] = useState('');
   const [kycFilter, setKycFilter] = useState({ riskLevel: '', status: '' });
 
-  const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+  const API_URL = process.env.REACT_APP_API_URL || '';
 
   // Suspend/Unsuspend merchant
   const suspendMerchant = async (merchantId: string) => {
