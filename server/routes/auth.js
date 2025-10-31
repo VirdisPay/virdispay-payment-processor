@@ -108,6 +108,7 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
     await user.save();
 
     // Initialize KYC process for new merchant
+    let riskAssessment = { level: 'medium', score: 50 }; // Default
     try {
       const merchantData = {
         id: user._id.toString(),
@@ -118,7 +119,12 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
       };
 
       // Calculate initial risk assessment
-      const riskAssessment = await kycService.calculateRiskScore(merchantData);
+      try {
+        riskAssessment = await kycService.calculateRiskScore(merchantData);
+      } catch (riskError) {
+        console.error('Risk assessment error:', riskError);
+        riskAssessment = { level: 'medium', score: 50 };
+      }
 
       // Get verification requirements based on risk level
       const requirements = kycService.getVerificationRequirements(merchantData, riskAssessment.level);
@@ -188,7 +194,7 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
           minute: '2-digit'
         }),
         kycStatus: user.kycStatus,
-        riskLevel: riskAssessment?.level || 'medium'
+        riskLevel: riskAssessment.level
       });
       console.log('✅ Admin notification sent for new merchant:', user.email);
     } catch (adminEmailError) {
