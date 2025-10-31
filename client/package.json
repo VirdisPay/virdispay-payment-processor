@@ -11,6 +11,7 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.15",
     "@types/react-dom": "^19.1.9",
+    "axios": "^1.6.2",
     "openapi-typescript-fetch": "^2.2.1",
     "qrcode.react": "^4.2.0",
     "react": "^19.1.1",
