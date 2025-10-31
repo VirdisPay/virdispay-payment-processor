@@ -18,6 +18,9 @@ interface User {
   kycStatus: string;
   role: string;
   walletAddress?: string; // Optional - can be added in profile
+  subscriptionTier?: string;
+  walletMethod?: string;
+  hasCompletedOnboarding?: boolean;
 }
 
 interface KYCStatus {
@@ -431,6 +434,7 @@ const MerchantDashboard: React.FC<MerchantDashboardProps> = ({ user, onLogout, o
           </div>
         </div>
       )}
+
 
       <div className="dashboard-content">
         {/* Tab Navigation */}

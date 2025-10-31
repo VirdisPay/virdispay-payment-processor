@@ -1,0 +1,156 @@
+# VirdisPay Launches Non-Custodial Crypto Payment Platform for Cannabis Industry - 75% Fee Reduction vs Traditional Processors
+
+**London, UK - October 18, 2024** - VirdisPay, a revolutionary non-custodial cryptocurrency payment processor, today announced its launch specifically targeting the cannabis industry. The platform offers cannabis businesses a 75% reduction in payment processing fees, charging just 2.5% compared to traditional high-risk processors that charge 10-15%.
+
+## Solving the Cannabis Payment Processing Crisis
+
+Cannabis businesses face a unique financial burden: traditional payment processors either reject them entirely or charge exorbitant fees of 10-15% per transaction. This creates an unsustainable cost structure for legal businesses operating in a $30 billion industry.
+
+"Most cannabis dispensaries are paying 10-15% in processing fees, which is 3-6 times higher than standard credit card processing," said the VirdisPay team. "A $100 purchase costs the business $10-15 just in payment processing. That's unsustainable for any business model."
+
+## 75% Fee Reduction with Cryptocurrency Payments
+
+VirdisPay's non-custodial cryptocurrency payment solution offers cannabis businesses dramatic cost savings:
+
+**Traditional High-Risk Processors:**
+- Cannabis businesses: 10-15% transaction fees
+- Account freezes and terminations common
+- Long approval processes (6-12 months)
+- High monthly minimums ($500-2000)
+
+**VirdisPay Crypto Payments:**
+- Cannabis businesses: 2.5% transaction fees (free tier)
+- No banking restrictions or account freezes
+- Instant approval and setup
+- No monthly minimums
+
+## Real-World Savings Examples
+
+**Small Dispensary ($50,000 monthly sales):**
+- Traditional processor: $5,000-7,500 in fees (10-15%)
+- VirdisPay: $1,250 in fees (2.5%)
+- **Monthly savings: $3,750-6,250**
+- **Annual savings: $45,000-75,000**
+
+**Medium Dispensary ($200,000 monthly sales):**
+- Traditional processor: $20,000-30,000 in fees
+- VirdisPay: $5,000 in fees
+- **Monthly savings: $15,000-25,000**
+- **Annual savings: $180,000-300,000**
+
+## Why Traditional Processors Charge So Much
+
+High-risk processors justify their 10-15% fees by citing regulatory compliance costs, chargeback risk, limited banking relationships, and regulatory uncertainty. VirdisPay eliminates these costs through:
+
+- **Non-custodial architecture** (no fund custody)
+- **Smart contract escrow** (eliminates chargebacks)
+- **Cryptocurrency payments** (no banking restrictions)
+- **Built-in compliance** (automated AML/KYC)
+
+## Four-Tier Pricing Structure
+
+VirdisPay offers transparent, tiered pricing:
+
+**Free Tier:**
+- 2.5% transaction fee
+- Up to $10,000 monthly volume
+- Perfect for small dispensaries
+
+**Starter ($29/month):**
+- 1.5% transaction fee
+- Up to $100,000 monthly volume
+- Ideal for growing businesses
+
+**Professional ($99/month):**
+- 1.0% transaction fee
+- Up to $100,000 monthly volume
+- Advanced reporting and analytics
+
+**Enterprise ($299/month):**
+- 0.5% transaction fee
+- Unlimited volume
+- Custom integrations and support
+
+## Industry-Wide Impact
+
+The cannabis industry processes approximately $30 billion annually in the US alone. At current 10-15% processing fees, businesses are paying $3-4.5 billion annually in excessive payment processing costs.
+
+"VirdisPay could save the cannabis industry billions in processing fees," the team stated. "That's money that can be reinvested in product quality, customer service, and business growth."
+
+## Immediate Availability
+
+Cannabis businesses can start accepting [VirdisPay payments](https://virdispay.com) immediately:
+
+1. **Sign up** at [virdispay.com](https://virdispay.com) (2 minutes)
+2. **Connect wallet** (MetaMask, Trust Wallet, etc.)
+3. **Start accepting [cryptocurrency payments](https://virdispay.com)** (USDC, USDT, DAI)
+4. **Save 75% on processing fees**
+
+No bank account, no merchant account application, no credit checks required.
+
+## About VirdisPay
+
+VirdisPay is a London-based cryptocurrency payment processor specializing in high-risk industries. The company's mission is to provide financial access to legal businesses systematically excluded from traditional banking services. VirdisPay operates as a non-custodial platform, ensuring maximum security and regulatory compliance.
+
+For more information, visit https://virdispay.com or contact hello@virdispay.com.
+
+## Additional Resources
+
+- Learn more about [cannabis payment processing solutions](https://virdispay.com/cannabis.html)
+- Discover [crypto payment options for dispensaries](https://virdispay.com)
+- Read our [cannabis industry payment guide](https://virdispay.com/blog/cannabis-payment-regulations-uk-usa.html)
+- View our [fee comparison calculator](https://virdispay.com)
+- Explore [USDC payment processing](https://virdispay.com) for cannabis businesses
+- Get started with [cryptocurrency payments](https://virdispay.com) today
+
+---
+
+**Media Contact:**
+VirdisPay  
+Email: hello@virdispay.com  
+Website: https://virdispay.com  
+Twitter: @VirdisPay
+
+**Keywords:** cannabis payment processing, crypto payments, payment processing fees, cannabis business, cryptocurrency payments, USDC payments, stablecoin payments, payment processor fees, cannabis dispensary payments, high-risk merchant services
+
+---
+
+### PRWEB.COM SUBMISSION INSTRUCTIONS:
+
+**When submitting to PRWeb.com:**
+
+1. **Go to:** https://www.prweb.com/
+2. **Click "Submit Press Release"** (free registration required)
+3. **Fill in the form:**
+   - **Headline:** VirdisPay Launches Non-Custodial Crypto Payment Platform for Cannabis Industry - 75% Fee Reduction vs Traditional Processors
+   - **Summary:** First 2-3 sentences from the release
+   - **Body:** Full text above
+   - **Category:** Choose "Business" or "Technology"
+   - **Tags:** cannabis payments, crypto payments, payment processing, fintech, blockchain
+   - **Website:** https://virdispay.com
+   - **Contact Email:** hello@virdispay.com
+   - **Location:** London, UK
+
+4. **SEO Benefits:**
+   - Google News indexing
+   - High SEO value
+   - Do-follow backlinks
+   - Cannabis industry reach
+
+5. **Submission Tips:**
+   - Use the exact headline above
+   - Include all keywords in the body
+   - Add your website URL
+   - Use professional contact information
+
+---
+
+**This press release is optimized for:**
+✅ PRWeb.com submission  
+✅ Cannabis industry keywords  
+✅ Fee comparison messaging  
+✅ SEO and backlinks  
+✅ Google News indexing  
+✅ Professional appearance  
+
+**Ready to submit to PRWeb.com!** 🚀

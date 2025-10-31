@@ -42,7 +42,7 @@ function validateEnvironment() {
       hasErrors = true;
     } else if (secret === 'your-secret-key' || 
                secret === 'your-super-secret-jwt-key-change-this-in-production' ||
-               secret.includes('your-super-secret') ||
+               secret.includes('your-super-secret') || 
                secret.includes('change-this')) {
       console.error(chalk.red('❌ FATAL: JWT_SECRET is using default/example value. Change it to a secure random string!'));
       hasErrors = true;

@@ -5,16 +5,17 @@
 
 const Transaction = require('../models/Transaction');
 const User = require('../models/User');
+const dynamicFeeService = require('./dynamicFeeService');
 
 // Platform fee configuration
 const PLATFORM_WALLET_ADDRESS = process.env.PLATFORM_WALLET_ADDRESS || '0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1';
 
-// Fee structure by subscription tier
+// Fee structure by subscription tier (matches website pricing)
 const FEE_STRUCTURE = {
-  free: 0.015,      // 1.5% for free tier
-  starter: 0.01,    // 1% for starter
-  professional: 0.01,  // 1% for professional
-  enterprise: 0.01  // 1% for enterprise
+  free: 0.025,      // 2.5% for free tier (matches website)
+  starter: 0.015,   // 1.5% for starter (matches website)
+  professional: 0.01,  // 1.0% for professional (matches website)
+  enterprise: 0.005  // 0.5% for enterprise (matches website)
 };
 
 class PlatformFeeService {
@@ -59,6 +60,12 @@ class PlatformFeeService {
     try {
       const feeCalc = await this.calculateFee(payment.amount, payment.merchantId);
       
+      // Update smart contract fee for this merchant's plan
+      const feeUpdate = await dynamicFeeService.updateFeeForPayment(payment);
+      if (!feeUpdate.success) {
+        console.warn('⚠️ Could not update smart contract fee, using default');
+      }
+      
       // Update payment with fee information
       payment.platformFee = feeCalc.fee;
       payment.platformFeePercentage = feeCalc.percentage;
@@ -75,7 +82,8 @@ class PlatformFeeService {
         fee: feeCalc.fee,
         percentage: feeCalc.percentage,
         plan: feeCalc.plan,
-        merchantReceives: feeCalc.merchantReceives
+        merchantReceives: feeCalc.merchantReceives,
+        smartContractUpdated: feeUpdate.success
       };
     } catch (error) {
       console.error('Error collecting platform fee:', error);

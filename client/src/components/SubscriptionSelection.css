@@ -1,0 +1,322 @@
+.subscription-selection {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscription-container {
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.subscription-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.subscription-header h2 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.subscription-header p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.subscription-subtitle {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tier-card {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.tier-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.tier-card.selected {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3), 0 8px 25px rgba(102, 126, 234, 0.2);
+  transform: translateY(-5px);
+  position: relative;
+  z-index: 10;
+}
+
+.tier-card.selected::before {
+  content: "✓";
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.tier-card.popular {
+  border-color: #48bb78;
+  box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(72, 187, 120, 0.3);
+  z-index: 5;
+}
+
+.tier-header {
+  margin-bottom: 1.5rem;
+}
+
+.tier-header h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.tier-pricing {
+  margin-bottom: 0.5rem;
+}
+
+.tier-pricing .price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.tier-pricing .period {
+  font-size: 1rem;
+  color: #718096;
+  margin-left: 0.25rem;
+}
+
+.tier-fee {
+  margin-bottom: 1rem;
+}
+
+.tier-fee .fee-rate {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #48bb78;
+}
+
+.tier-fee .fee-label {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-left: 0.25rem;
+}
+
+.tier-volume {
+  background: #f7fafc;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.tier-volume .volume-text {
+  font-size: 0.9rem;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  color: #4a5568;
+}
+
+.tier-features .feature-icon {
+  color: #48bb78;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.tier-savings {
+  background: linear-gradient(135deg, #fed7d7, #feb2b2);
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.tier-savings .savings-text {
+  font-size: 0.85rem;
+  color: #c53030;
+  font-weight: 600;
+}
+
+.subscription-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.continue-button {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 250px;
+}
+
+.continue-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.continue-button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.continue-button:not(:disabled) {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+  }
+}
+
+.skip-button {
+  background: transparent;
+  color: #718096;
+  border: 2px solid #e2e8f0;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.skip-button:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.subscription-footer {
+  text-align: center;
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.subscription-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.subscription-footer a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.subscription-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .subscription-container {
+    padding: 2rem 1rem;
+  }
+  
+  .subscription-header h2 {
+    font-size: 2rem;
+  }
+  
+  .tiers-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .tier-card {
+    padding: 1.5rem;
+  }
+  
+  .tier-pricing .price {
+    font-size: 2.5rem;
+  }
+  
+  .continue-button {
+    width: 100%;
+    min-width: auto;
+  }
+}

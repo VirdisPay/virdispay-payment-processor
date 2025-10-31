@@ -10,6 +10,7 @@ import RegisterForm from './components/RegisterForm';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import WidgetPage from './components/WidgetPage';
+import OnboardingFlow from './components/OnboardingFlow';
 
 interface User {
   id: string;
@@ -19,12 +20,16 @@ interface User {
   kycStatus: string;
   role: string;
   walletAddress?: string;
+  subscriptionTier?: string;
+  walletMethod?: string;
+  hasCompletedOnboarding?: boolean;
 }
 
 // Wrapper component to access navigate
 function AppContent() {
   const [user, setUser] = useState<User | null>(null);
   const [paymentData, setPaymentData] = useState<any>(null);
+  const [showOnboarding, setShowOnboarding] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -60,6 +65,23 @@ function AppContent() {
   const handleLogin = (userData: User, token: string) => {
     setUser(userData);
     localStorage.setItem('token', token);
+    
+    // Check if user needs onboarding
+    if (!userData.hasCompletedOnboarding && !userData.subscriptionTier) {
+      setShowOnboarding(true);
+    } else {
+      navigate('/dashboard');
+    }
+  };
+
+  const handleOnboardingComplete = (updatedUser: User) => {
+    setUser(updatedUser);
+    setShowOnboarding(false);
+    navigate('/dashboard');
+  };
+
+  const handleOnboardingSkip = () => {
+    setShowOnboarding(false);
     navigate('/dashboard');
   };
 
@@ -80,6 +102,17 @@ function AppContent() {
   const isPublicPaymentRoute = window.location.pathname.startsWith('/pay/');
   // Widget page also needs full-screen layout
   const isWidgetRoute = window.location.pathname === '/widget';
+
+  // Show onboarding if needed
+  if (showOnboarding && user) {
+    return (
+      <OnboardingFlow
+        user={user}
+        onComplete={handleOnboardingComplete}
+        onSkip={handleOnboardingSkip}
+      />
+    );
+  }
 
   return (
     <div className="App">

@@ -197,6 +197,7 @@ app.set('notificationService', notificationService);
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/profile', require('./routes/profile'));
 app.use('/api/payments', require('./routes/payments'));
 app.use('/api/transactions', require('./routes/transactions'));
 app.use('/api/merchants', require('./routes/merchants'));
@@ -243,10 +244,26 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 404 handler
-app.use('*', (req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
+// Serve static files from React build in production
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  // Serve static files from the React app build directory
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  
+  // Handle React routing - return all requests to React app
+  app.get('*', (req, res) => {
+    // Don't serve React app for API routes
+    if (req.path.startsWith('/api/')) {
+      return res.status(404).json({ error: 'Route not found' });
+    }
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+  });
+} else {
+  // 404 handler for development
+  app.use('*', (req, res) => {
+    res.status(404).json({ error: 'Route not found' });
+  });
+}
 
 server.listen(PORT, () => {
   logger.info(`VirdisPay Payment Processor server running on port ${PORT}`);

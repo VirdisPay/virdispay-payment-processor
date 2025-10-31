@@ -328,6 +328,25 @@ class EmailService {
     }
 
     /**
+     * Send admin notification for new merchant registration
+     */
+    async sendAdminNewMerchantNotification(adminEmail, merchantData) {
+        return await this.sendEmail('admin-new-merchant', adminEmail, {
+            merchantName: merchantData.businessName,
+            merchantEmail: merchantData.email,
+            businessType: merchantData.businessType,
+            country: merchantData.country,
+            state: merchantData.state,
+            licenseNumber: merchantData.licenseNumber,
+            registrationDate: merchantData.registrationDate,
+            kycStatus: merchantData.kycStatus,
+            riskLevel: merchantData.riskLevel,
+            adminDashboardUrl: `${process.env.SITE_URL || 'https://virdispay.com'}/admin`,
+            merchantProfileUrl: `${process.env.SITE_URL || 'https://virdispay.com'}/admin/merchants/${merchantData.id}`
+        });
+    }
+
+    /**
      * Send bulk emails
      */
     async sendBulkEmails(templateName, recipients, data, options = {}) {

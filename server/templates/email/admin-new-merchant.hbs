@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Merchant Registration - VirdisPay</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px;
+        }
+        .merchant-info {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .info-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .info-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        .info-value {
+            color: #6c757d;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-approved {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status-rejected {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .risk-level {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .risk-low {
+            background: #d4edda;
+            color: #155724;
+        }
+        .risk-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .risk-high {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 14px;
+        }
+        .urgent {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .urgent h3 {
+            margin: 0 0 10px 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🆕 New Merchant Registration</h1>
+            <p>A new merchant has signed up for VirdisPay</p>
+        </div>
+        
+        <div class="content">
+            <h2>Merchant Details</h2>
+            <div class="merchant-info">
+                <div class="info-row">
+                    <span class="info-label">Business Name:</span>
+                    <span class="info-value">{{merchantName}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">{{merchantEmail}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Business Type:</span>
+                    <span class="info-value">{{businessType}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Country:</span>
+                    <span class="info-value">{{country}}</span>
+                </div>
+                {{#if state}}
+                <div class="info-row">
+                    <span class="info-label">State/Region:</span>
+                    <span class="info-value">{{state}}</span>
+                </div>
+                {{/if}}
+                {{#if licenseNumber}}
+                <div class="info-row">
+                    <span class="info-label">License Number:</span>
+                    <span class="info-value">{{licenseNumber}}</span>
+                </div>
+                {{/if}}
+                <div class="info-row">
+                    <span class="info-label">Registration Date:</span>
+                    <span class="info-value">{{registrationDate}}</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">KYC Status:</span>
+                    <span class="info-value">
+                        <span class="status-badge status-{{kycStatus}}">{{kycStatus}}</span>
+                    </span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Risk Level:</span>
+                    <span class="info-value">
+                        <span class="risk-level risk-{{riskLevel}}">{{riskLevel}}</span>
+                    </span>
+                </div>
+            </div>
+
+            {{#if (eq riskLevel 'high')}}
+            <div class="urgent">
+                <h3>⚠️ High Risk Merchant</h3>
+                <p>This merchant has been flagged as high risk. Please review their application carefully and consider additional verification requirements.</p>
+            </div>
+            {{/if}}
+
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="{{adminDashboardUrl}}" class="cta-button">View Admin Dashboard</a>
+                <a href="{{merchantProfileUrl}}" class="cta-button">Review Merchant Profile</a>
+            </div>
+
+            <h3>Next Steps</h3>
+            <ul>
+                <li>Review the merchant's business information and documentation</li>
+                <li>Verify their business license and compliance requirements</li>
+                <li>Complete KYC verification process</li>
+                <li>Approve or reject their application based on your findings</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <p>This is an automated notification from VirdisPay Admin System</p>
+            <p>If you have any questions, please contact the development team.</p>
+        </div>
+    </div>
+</body>
+</html>
+

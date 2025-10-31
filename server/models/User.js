@@ -150,6 +150,22 @@ const userSchema = new mongoose.Schema({
     enum: ['merchant', 'admin'],
     default: 'merchant'
   },
+  
+  // Onboarding and Subscription
+  subscriptionTier: {
+    type: String,
+    enum: ['free', 'starter', 'professional', 'enterprise'],
+    default: 'free'
+  },
+  walletMethod: {
+    type: String,
+    enum: ['trust', 'metamask', 'manual', 'other'],
+    required: false
+  },
+  hasCompletedOnboarding: {
+    type: Boolean,
+    default: false
+  },
   resetPasswordToken: {
     type: String,
     default: null

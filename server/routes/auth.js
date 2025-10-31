@@ -169,6 +169,33 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
       // Don't fail registration if email fails
     }
 
+    // Send admin notification for new merchant registration
+    try {
+      const adminEmail = process.env.ADMIN_EMAIL || 'hello@virdispay.com';
+      await emailService.sendAdminNewMerchantNotification(adminEmail, {
+        id: user._id.toString(),
+        businessName: user.businessName,
+        email: user.email,
+        businessType: user.businessType,
+        country: user.country,
+        state: user.state,
+        licenseNumber: user.licenseNumber,
+        registrationDate: new Date().toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit'
+        }),
+        kycStatus: user.kycStatus,
+        riskLevel: riskAssessment?.level || 'medium'
+      });
+      console.log('✅ Admin notification sent for new merchant:', user.email);
+    } catch (adminEmailError) {
+      console.error('Failed to send admin notification:', adminEmailError);
+      // Don't fail registration if admin email fails
+    }
+
     res.status(201).json({
       success: true,
       message: 'Registration successful. Please complete KYC verification.',
