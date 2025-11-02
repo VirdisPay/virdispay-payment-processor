@@ -1,0 +1,89 @@
+[33mcommit af6959080aba2d281441386c57cfda3ec368a029[m
+Author: Ashley <hello@virdispay.com>
+Date:   Fri Oct 31 22:56:06 2025 +0000
+
+    Remove temp file
+
+[1mdiff --git a/CHECK_MONGODB_CONNECTION.md b/CHECK_MONGODB_CONNECTION.md[m
+[1mdeleted file mode 100644[m
+[1mindex 7d76273..0000000[m
+[1m--- a/CHECK_MONGODB_CONNECTION.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,32 +0,0 @@[m
+[31m-# Check MongoDB Connection[m
+[31m-[m
+[31m-## The Issue:[m
+[31m-Registration hangs because MongoDB connection might be failing.[m
+[31m-[m
+[31m-## Check Render Logs:[m
+[31m-[m
+[31m-Look for these messages:[m
+[31m-1. ✅ **"Connected to MongoDB"** - Good![m
+[31m-2. ❌ **"MongoDB connection error"** - Problem![m
+[31m-3. ❌ **"Could not connect to any servers"** - IP whitelist issue[m
+[31m-[m
+[31m-## Common Issues:[m
+[31m-[m
+[31m-### 1. MongoDB IP Whitelist Not Working[m
+[31m-- Even though you added `0.0.0.0/0`, it might not be applied yet[m
+[31m-- Wait 2-3 minutes after adding[m
+[31m-[m
+[31m-### 2. Connection String Wrong[m
+[31m-- Check environment variable: `MONGODB_URI`[m
+[31m-- Should be: `mongodb+srv://hello_db_user:PA8Y825JufhQWYQw@virdispay-cluster.qicmhbw.mongodb.net/virdispay-payments?appName=VirdisPay-Cluster`[m
+[31m-[m
+[31m-### 3. MongoDB Database User Issue[m
+[31m-- Password might be wrong[m
+[31m-- Username might be wrong[m
+[31m-[m
+[31m----[m
+[31m-[m
+[31m-## Quick Fix - Check Logs:[m
+[31m-[m
+[31m-Scroll through Render logs and look for MongoDB errors. What do you see?[m
+[31m-[m
+
+[33mcommit 5ad23fa3c747befe70a7d4a65e7a558d76dae099[m
+Author: Ashley <hello@virdispay.com>
+Date:   Fri Oct 31 22:55:43 2025 +0000
+
+    Fix riskAssessment scope error in registration
+
+[1mdiff --git a/CHECK_MONGODB_CONNECTION.md b/CHECK_MONGODB_CONNECTION.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7d76273[m
+[1m--- /dev/null[m
+[1m+++ b/CHECK_MONGODB_CONNECTION.md[m
+[36m@@ -0,0 +1,32 @@[m
+[32m+[m[32m# Check MongoDB Connection[m
+[32m+[m
+[32m+[m[32m## The Issue:[m
+[32m+[m[32mRegistration hangs because MongoDB connection might be failing.[m
+[32m+[m
+[32m+[m[32m## Check Render Logs:[m
+[32m+[m
+[32m+[m[32mLook for these messages:[m
+[32m+[m[32m1. ✅ **"Connected to MongoDB"** - Good![m
+[32m+[m[32m2. ❌ **"MongoDB connection error"** - Problem![m
+[32m+[m[32m3. ❌ **"Could not connect to any servers"** - IP whitelist issue[m
+[32m+[m
+[32m+[m[32m## Common Issues:[m
+[32m+[m
+[32m+[m[32m### 1. MongoDB IP Whitelist Not Working[m
+[32m+[m[32m- Even though you added `0.0.0.0/0`, it might not be applied yet[m
+[32m+[m[32m- Wait 2-3 minutes after adding[m
+[32m+[m
+[32m+[m[32m### 2. Connection String Wrong[m
+[32m+[m[32m- Check environment variable: `MONGODB_URI`[m
+[32m+[m[32m- Should be: `mongodb+srv://hello_db_user:PA8Y825JufhQWYQw@virdispay-cluster.qicmhbw.mongodb.net/virdispay-payments?appName=VirdisPay-Cluster`[m
+[32m+[m
+[32m+[m[32m### 3. MongoDB Database User Issue[m
+[32m+[m[32m- Password might be wrong[m
+[32m+[m[32m- Username might be wrong[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## Quick Fix - Check Logs:[m
+[32m+[m
+[32m+[m[32mScroll through Render logs and look for MongoDB errors. What do you see?[m
+[32m+[m

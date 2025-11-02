@@ -1,0 +1,46 @@
+[33mcommit 0fecaa31248f2363c3a7ce3a0bdff787f3f52812[m
+Author: Ashley <hello@virdispay.com>
+Date:   Fri Oct 31 22:27:21 2025 +0000
+
+    Fix production API URLs - remove localhost fallback
+
+ALTERNATIVE_PLATFORMS.md
+CONTACT_GITHUB_SUPPORT.md
+DEPLOYMENT_ALTERNATIVES.md
+Dockerfile
+FINAL_DEPLOYMENT_STATUS.md
+FIX_MONGODB_WHITELIST.md
+FLY_IO_DEPLOYMENT.md
+FLY_IO_PRICING_INFO.md
+GITHUB_2FA_SETUP.md
+GITHUB_PUSH_INSTRUCTIONS.md
+MONGODB_ATLAS_SETUP.md
+NO_GITHUB_DEPLOYMENT_OPTIONS.md
+PUSH_FIX_NEEDED.md
+RAILWAY_CLI_DEPLOYMENT.md
+RAILWAY_DEPLOY_NOW.md
+RAILWAY_FIND_EMPTY_PROJECT.md
+RAILWAY_LIMITED_PLAN_SOLUTIONS.md
+RAILWAY_WEB_DEPLOYMENT.md
+README.md
+RENDER_ENVIRONMENT_VARIABLES.md
+RENDER_MONGODB_SETUP.md
+SENDGRID_FREE_TIER_INFO.md
+SENDGRID_SETUP_GUIDE.md
+SENDGRID_TWILIO_SETUP.md
+SETUP_EMAIL_NOTIFICATIONS.md
+TEST_API_ENDPOINTS.md
+TEST_EMAIL_FUNCTIONALITY.md
+TROUBLESHOOT_REGISTRATION.md
+UNFLAG_GITHUB_ACCOUNT.md
+client/src/components/AdminDashboard.tsx
+client/src/components/ApiKeySettings.tsx
+client/src/components/ForgotPassword.tsx
+client/src/components/LoginForm.tsx
+client/src/components/MerchantDashboard.tsx
+client/src/components/OnboardingFlow.tsx
+client/src/components/ProfileSettings.tsx
+client/src/components/PublicPaymentPage.tsx
+client/src/components/RegisterForm.tsx
+client/src/components/ResetPassword.tsx
+client/src/hooks/useNotifications.js
