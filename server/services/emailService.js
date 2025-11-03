@@ -12,8 +12,34 @@ class EmailService {
     constructor() {
         this.transporter = null;
         this.templates = {};
+        this.registerHandlebarsHelpers();
         this.initializeTransporter();
         this.loadTemplates();
+    }
+
+    /**
+     * Register Handlebars helpers
+     */
+    registerHandlebarsHelpers() {
+        // Equality helper
+        handlebars.registerHelper('eq', function(a, b) {
+            return a === b;
+        });
+        
+        // Not equal helper
+        handlebars.registerHelper('ne', function(a, b) {
+            return a !== b;
+        });
+        
+        // Greater than helper
+        handlebars.registerHelper('gt', function(a, b) {
+            return a > b;
+        });
+        
+        // Less than helper
+        handlebars.registerHelper('lt', function(a, b) {
+            return a < b;
+        });
     }
 
     /**

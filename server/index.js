@@ -232,6 +232,22 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+// Email service status check (for debugging)
+app.get('/api/email-status', (req, res) => {
+  const emailService = require('./services/emailService');
+  const emailServiceInstance = new emailService();
+  
+  res.json({
+    smtpConfigured: !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS),
+    smtpHost: process.env.SMTP_HOST || 'NOT SET',
+    smtpPort: process.env.SMTP_PORT || 'NOT SET',
+    smtpUser: process.env.SMTP_USER || 'NOT SET',
+    smtpFrom: process.env.SMTP_FROM || 'NOT SET',
+    adminEmail: process.env.ADMIN_EMAIL || 'NOT SET',
+    note: 'Check Render logs for "📧 Initializing email service..." to see full configuration'
+  });
+});
+
 // Rate limit violation handler
 app.use(rateLimitViolationHandler);
 

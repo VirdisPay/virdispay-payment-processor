@@ -17,7 +17,20 @@ class RateLimitService extends EventEmitter {
       password: process.env.REDIS_PASSWORD,
       retryDelayOnFailover: 100,
       maxRetriesPerRequest: 3,
-      lazyConnect: true
+      lazyConnect: true,
+      enableReadyCheck: false,
+      enableOfflineQueue: false
+    });
+
+    // Suppress unhandled Redis errors - we handle them gracefully via fallback
+    let redisErrorLogged = false;
+    this.redis.on('error', (error) => {
+      // Log only once when Redis first fails, then use silent fallback
+      if (!redisErrorLogged) {
+        console.log('⚠️ Redis not available, using in-memory rate limiting fallback');
+        redisErrorLogged = true;
+      }
+      this.redisAvailable = false;
     });
 
     // Fallback storage
@@ -115,24 +128,18 @@ class RateLimitService extends EventEmitter {
   async initializeRedis() {
     try {
       await this.redis.connect();
-      console.log('Rate limiting service connected to Redis');
+      console.log('✅ Rate limiting service connected to Redis');
       this.redisAvailable = true;
       
-      // Set up error handling
-      this.redis.on('error', (error) => {
-        console.error('Redis connection error:', error);
-        this.redisAvailable = false;
-        this.emit('redis_error', error);
-      });
-
+      // Error handling already set up in constructor, just emit events
       this.redis.on('connect', () => {
-        console.log('Redis connection restored');
+        console.log('✅ Redis connection restored');
         this.redisAvailable = true;
         this.emit('redis_connected');
       });
 
     } catch (error) {
-      console.error('Failed to connect to Redis, using in-memory fallback:', error);
+      // Already logged in constructor error handler, just set state
       this.redisAvailable = false;
       this.memoryStore = new Map(); // Fallback to in-memory storage
       this.emit('redis_error', error);
