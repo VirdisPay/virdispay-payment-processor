@@ -21,9 +21,9 @@ class EmailService {
      */
     initializeTransporter() {
         // Use environment variables for email configuration
-        this.transporter = nodemailer.createTransport({
+        const smtpConfig = {
             host: process.env.SMTP_HOST || 'smtp.gmail.com',
-            port: process.env.SMTP_PORT || 587,
+            port: parseInt(process.env.SMTP_PORT || '587'),
             secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
             auth: {
                 user: process.env.SMTP_USER || 'noreply@virdispay.com',
@@ -32,14 +32,25 @@ class EmailService {
             tls: {
                 rejectUnauthorized: false
             }
-        });
+        };
+
+        console.log('📧 Initializing email service...');
+        console.log('SMTP Host:', smtpConfig.host);
+        console.log('SMTP Port:', smtpConfig.port);
+        console.log('SMTP Secure:', smtpConfig.secure);
+        console.log('SMTP User:', smtpConfig.auth.user);
+        console.log('SMTP Pass:', smtpConfig.auth.pass ? `${smtpConfig.auth.pass.substring(0, 5)}...` : 'NOT SET');
+        console.log('SMTP From:', process.env.SMTP_FROM || 'NOT SET');
+
+        this.transporter = nodemailer.createTransport(smtpConfig);
 
         // Verify connection configuration
         this.transporter.verify((error, success) => {
             if (error) {
-                console.error('Email service configuration error:', error);
+                console.error('❌ Email service configuration error:', error.message);
+                console.error('Full error:', error);
             } else {
-                console.log('Email service ready to send messages');
+                console.log('✅ Email service ready to send messages');
             }
         });
     }

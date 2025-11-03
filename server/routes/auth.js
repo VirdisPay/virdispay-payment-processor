@@ -160,7 +160,8 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
 
     // Send welcome email
     try {
-      await emailService.sendWelcomeEmail(user.email, {
+      console.log(`📧 Attempting to send welcome email to ${user.email}...`);
+      const emailResult = await emailService.sendWelcomeEmail(user.email, {
         firstName: user.firstName,
         businessName: user.businessName,
         kycStatus: user.kycStatus,
@@ -170,15 +171,22 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
           'Complete verification process'
         ]
       });
+      if (emailResult.success) {
+        console.log(`✅ Welcome email sent successfully to ${user.email}`);
+      } else {
+        console.error(`❌ Failed to send welcome email to ${user.email}:`, emailResult.error);
+      }
     } catch (emailError) {
-      console.error('Failed to send welcome email:', emailError);
+      console.error('❌ Failed to send welcome email:', emailError.message);
+      console.error('Full error:', emailError);
       // Don't fail registration if email fails
     }
 
     // Send admin notification for new merchant registration
     try {
       const adminEmail = process.env.ADMIN_EMAIL || 'hello@virdispay.com';
-      await emailService.sendAdminNewMerchantNotification(adminEmail, {
+      console.log(`📧 Attempting to send admin notification to ${adminEmail}...`);
+      const adminEmailResult = await emailService.sendAdminNewMerchantNotification(adminEmail, {
         id: user._id.toString(),
         businessName: user.businessName,
         email: user.email,
@@ -196,9 +204,14 @@ router.post('/register', registerRateLimit, validateRegistration, async (req, re
         kycStatus: user.kycStatus,
         riskLevel: riskAssessment.level
       });
-      console.log('✅ Admin notification sent for new merchant:', user.email);
+      if (adminEmailResult.success) {
+        console.log(`✅ Admin notification sent successfully to ${adminEmail} for new merchant: ${user.email}`);
+      } else {
+        console.error(`❌ Failed to send admin notification to ${adminEmail}:`, adminEmailResult.error);
+      }
     } catch (adminEmailError) {
-      console.error('Failed to send admin notification:', adminEmailError);
+      console.error('❌ Failed to send admin notification:', adminEmailError.message);
+      console.error('Full error:', adminEmailError);
       // Don't fail registration if admin email fails
     }
 
