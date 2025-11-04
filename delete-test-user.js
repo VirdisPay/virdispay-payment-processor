@@ -20,8 +20,7 @@ async function deleteUser(email) {
       console.log('1. Create a .env file in the root directory with: MONGODB_URI=your_connection_string');
       console.log('2. Or pass it as an argument: node delete-test-user.js <email> <mongo_uri>');
       console.log('');
-      console.log('Your MongoDB URI should be:');
-      console.log('mongodb+srv://hello_db_user:PA8Y825JufhQWYQw@virdispay-cluster.qicmhbw.mongodb.net/virdispay-payments');
+      console.log('Get your MongoDB URI from Render Dashboard → Environment Variables → MONGODB_URI');
       process.exit(1);
     }
 
