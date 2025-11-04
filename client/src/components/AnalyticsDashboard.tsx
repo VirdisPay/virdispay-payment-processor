@@ -65,7 +65,7 @@ const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ token }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [selectedPeriod, setSelectedPeriod] = useState('30d');
-  const [activeTab, setActiveTab] = useState<'overview' | 'revenue' | 'customers' | 'networks' | 'compliance'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'revenue' | 'customers' | 'networks'>('overview');
 
   useEffect(() => {
     loadAnalytics();
@@ -222,8 +222,7 @@ const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ token }) => {
           { key: 'overview', label: 'Overview', icon: '📈' },
           { key: 'revenue', label: 'Revenue', icon: '💰' },
           { key: 'customers', label: 'Customers', icon: '👥' },
-          { key: 'networks', label: 'Networks', icon: '🌐' },
-          { key: 'compliance', label: 'Compliance', icon: '🛡️' }
+          { key: 'networks', label: 'Networks', icon: '🌐' }
         ].map(tab => (
           <button
             key={tab.key}
@@ -438,49 +437,6 @@ const AnalyticsDashboard: React.FC<AnalyticsDashboardProps> = ({ token }) => {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Compliance Tab */}
-      {activeTab === 'compliance' && (
-        <div className="analytics-content">
-          <div className="compliance-details">
-            <h3>🛡️ Compliance Analytics</h3>
-            
-            <div className="compliance-stats">
-              <div className="compliance-stat">
-                <div className="stat-value">{formatNumber(analyticsData.compliance.totalTransactions)}</div>
-                <div className="stat-label">Total Transactions</div>
-              </div>
-              <div className="compliance-stat">
-                <div className="stat-value">{analyticsData.compliance.kycRate}%</div>
-                <div className="stat-label">KYC Verified</div>
-              </div>
-              <div className="compliance-stat">
-                <div className="stat-value">{analyticsData.compliance.amlRate}%</div>
-                <div className="stat-label">AML Checked</div>
-              </div>
-              <div className="compliance-stat">
-                <div className="stat-value">{analyticsData.compliance.riskRate}%</div>
-                <div className="stat-label">High Risk</div>
-              </div>
-            </div>
-
-            <div className="compliance-breakdown">
-              <div className="breakdown-item">
-                <div className="breakdown-label">KYC Verified Transactions</div>
-                <div className="breakdown-value">{formatNumber(analyticsData.compliance.kycVerified)}</div>
-              </div>
-              <div className="breakdown-item">
-                <div className="breakdown-label">AML Checked Transactions</div>
-                <div className="breakdown-value">{formatNumber(analyticsData.compliance.amlChecked)}</div>
-              </div>
-              <div className="breakdown-item">
-                <div className="breakdown-label">High Risk Transactions</div>
-                <div className="breakdown-value">{formatNumber(analyticsData.compliance.highRiskTransactions)}</div>
-              </div>
             </div>
           </div>
         </div>
