@@ -1,0 +1,83 @@
+FOR IMMEDIATE RELEASE
+
+Contact:
+[Your Name]
+Founder and CEO, VirdisPay
+Email: hello@virdispay.com
+Website: https://virdispay.com
+
+
+VirdisPay Launches Cryptocurrency Payment Solution for CBD and Hemp Businesses
+
+New Payment Processing Platform Addresses Banking Challenges Facing Legal CBD and Hemp Industries
+
+[London, UK - DATE] - VirdisPay, a London-based financial technology company, today announced the launch of its cryptocurrency payment processing platform designed specifically for legal CBD and hemp businesses. The solution addresses the significant payment processing challenges faced by these industries, which often struggle to access traditional banking services despite operating legally.
+
+The platform enables CBD retailers, hemp businesses, and related companies to accept cryptocurrency payments with reduced transaction fees, while maintaining full compliance with Know Your Customer (KYC) and Anti-Money Laundering (AML) regulations.
+
+The CBD and Hemp Banking Challenge
+
+Legal CBD and hemp businesses face unique financial obstacles:
+• Traditional banks and payment processors often refuse to work with CBD and hemp-related businesses, even when operating legally
+• High-risk payment processors that do accept CBD businesses typically charge 10-15% transaction fees, compared to 2.9% for standard retail businesses
+• Accounts can be frozen or terminated without warning, disrupting business operations
+• Long approval processes and high monthly minimums create barriers for smaller operators
+• UK CBD businesses face particular challenges despite CBD being legal
+
+Platform Solution
+
+VirdisPay's cryptocurrency-based payment platform eliminates these banking barriers:
+• No traditional banking relationship required - operates entirely on blockchain technology
+• Reduced transaction fees starting at 2.5% for the free tier, compared to 10-15% charged by traditional high-risk processors
+• Instant approval and setup process, eliminating months-long waiting periods
+• No account freezes or unexpected terminations
+• Built-in compliance tools including automated KYC/AML verification
+
+Compliance and Security Features
+
+The platform includes comprehensive compliance capabilities designed for regulated industries:
+• Automated Know Your Customer (KYC) verification processes
+• Anti-Money Laundering (AML) monitoring and reporting
+• Risk assessment tools
+• Document management systems
+• Regulatory compliance frameworks
+• Non-custodial architecture ensuring merchants maintain direct control of funds
+
+Smart Payment Routing Technology
+
+VirdisPay utilizes automated routing technology that selects optimal blockchain networks based on current transaction costs. The platform supports multiple stablecoin options including USDC, USDT, and DAI across networks such as Polygon, Binance Smart Chain, and Arbitrum, ensuring merchants always receive the most cost-effective payment processing.
+
+Executive Quote
+
+"Legal CBD and hemp businesses have been systematically excluded from traditional banking services, forcing them to pay exorbitant fees or operate entirely in cash. This is particularly challenging for UK CBD businesses, which operate legally but still face banking discrimination. VirdisPay was developed to provide these legal businesses with a modern, compliant payment solution that doesn't discriminate based on industry. Our platform combines the efficiency of blockchain technology with robust compliance capabilities specifically designed for regulated industries."
+
+- [Your Name], Founder and CEO, VirdisPay
+
+Industry Impact
+
+The legal CBD and hemp industry generates billions in annual sales globally, with the UK CBD market alone valued at over £690 million. Many of these businesses struggle with payment processing, often paying 3-5 times more in fees than standard retail businesses or operating entirely in cash, which creates security and compliance challenges.
+
+VirdisPay's platform provides these businesses with a secure, compliant, and cost-effective alternative to traditional payment processing, enabling them to operate more efficiently while maintaining regulatory compliance.
+
+About VirdisPay
+
+VirdisPay is a cryptocurrency payment processing platform headquartered in London, specializing in providing financial technology solutions for businesses in regulated industries. The company focuses on serving legal businesses that face challenges accessing traditional payment processing services, including CBD retailers, hemp businesses, and other regulated sectors.
+
+The platform enables businesses to accept stablecoin payments with reduced transaction fees, automated network routing, and built-in compliance tools. VirdisPay operates as a non-custodial platform, ensuring merchants maintain direct control over their funds while benefiting from integrated compliance and security features.
+
+Availability
+
+VirdisPay is now available for CBD and hemp businesses operating in jurisdictions where such businesses are legal and where cryptocurrency payments are permitted. The platform offers multiple service tiers designed to accommodate businesses of various sizes, from small CBD retailers to large hemp operations.
+
+Media Contact
+
+For more information or to schedule an interview, please contact:
+
+[Your Name]
+Founder and CEO, VirdisPay
+Email: hello@virdispay.com
+Website: https://virdispay.com
+
+---
+
+END OF PRESS RELEASE

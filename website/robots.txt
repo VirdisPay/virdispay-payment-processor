@@ -4,8 +4,7 @@ Allow: /
 # Sitemap location
 Sitemap: https://virdispay.com/sitemap.xml
 
-# Block admin and checkout pages from indexing
-Disallow: /admin.html
+# Block checkout pages from indexing
 Disallow: /checkout.html
 
 # Allow widget examples page

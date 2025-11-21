@@ -1,0 +1,69 @@
+ISSUEWIRE ANCHOR TEXT GUIDE WITH URLs
+======================================
+
+Use these 9 phrases as anchor text when submitting to IssueWire:
+
+1. "cryptocurrency payment processing platform"
+   Location: "...launch of its cryptocurrency payment processing platform designed for regulated and specialty merchants..."
+   URL: https://virdispay.com/crypto.html
+
+2. "regulated merchants"
+   Location: "...cryptocurrency payment processing platform designed for regulated and specialty merchants..."
+   URL: https://virdispay.com
+
+3. "payment processing"
+   Location: "Merchants operating in tightly regulated verticals often encounter persistent obstacles when seeking reliable payment processing..."
+   URL: https://virdispay.com
+
+4. "blockchain infrastructure"
+   Location: "No traditional banking relationship required—runs entirely on audited blockchain infrastructure"
+   URL: https://virdispay.com/crypto.html
+
+5. "KYC/AML automation"
+   Location: "Built-in KYC/AML automation, sanctions screening, and risk scoring"
+   URL: https://virdispay.com/compliance.html
+
+6. "stablecoin payments"
+   Location: "...supporting stablecoin payments across Polygon, Binance Smart Chain, Arbitrum, and other leading ecosystems"
+   URL: https://virdispay.com/crypto.html
+
+7. "crypto payment platform"
+   Location: "The VirdisPay crypto payment platform is available immediately..."
+   URL: https://virdispay.com
+
+8. "compliance-first payment technology"
+   Location: "The company builds compliance-first payment technology for merchants operating in regulated verticals"
+   URL: https://virdispay.com/compliance.html
+
+9. "cryptocurrency payment processing solutions"
+   Location: "To learn more about VirdisPay’s cryptocurrency payment processing solutions, visit https://virdispay.com."
+   URL: https://virdispay.com
+
+Quick Copy/Paste for IssueWire Submission
+----------------------------------------
+Anchor Text 1: cryptocurrency payment processing platform
+URL 1: https://virdispay.com/crypto.html
+
+Anchor Text 2: regulated merchants
+URL 2: https://virdispay.com
+
+Anchor Text 3: payment processing
+URL 3: https://virdispay.com
+
+Anchor Text 4: blockchain infrastructure
+URL 4: https://virdispay.com/crypto.html
+
+Anchor Text 5: KYC/AML automation
+URL 5: https://virdispay.com/compliance.html
+
+Anchor Text 6: stablecoin payments
+URL 6: https://virdispay.com/crypto.html
+
+Anchor Text 7: crypto payment platform
+URL 7: https://virdispay.com
+
+Anchor Text 8: compliance-first payment technology
+URL 8: https://virdispay.com/compliance.html
+
+Anchor Text 9: cryptocurrency payment processing solutions
+URL 9: https://virdispay.com

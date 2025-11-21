@@ -66,6 +66,12 @@ function AppContent() {
     setUser(userData);
     localStorage.setItem('token', token);
     
+    // Skip onboarding for admin users
+    if (userData.role === 'admin') {
+      navigate('/dashboard');
+      return;
+    }
+    
     // Check if user needs onboarding
     if (!userData.hasCompletedOnboarding && !userData.subscriptionTier) {
       setShowOnboarding(true);
