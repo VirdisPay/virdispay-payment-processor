@@ -5,10 +5,10 @@ Allow: /
 Sitemap: https://virdispay.com/sitemap.xml
 
 # Block checkout pages from indexing
-Disallow: /checkout.html
+Disallow: /checkout
 
 # Allow widget examples page
-Allow: /widgets/examples.html
+Allow: /widgets/examples
 
 # Allow all blog content
 Allow: /blog/
@@ -18,3 +18,10 @@ Crawl-delay: 1
 
 
 
+
+# Block deployment/backup folders from being crawled
+Disallow: /website-deploy/
+Disallow: /netlify-upload/
+Disallow: /client/
+Disallow: /*.zip$
+Disallow: /*.tar.gz$
